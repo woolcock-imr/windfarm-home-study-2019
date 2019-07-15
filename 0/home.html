@@ -1,0 +1,63 @@
+<div id=D__ID>
+	<div id=page_1__ID class=home_page_1>
+		<div class="panel__ID text-center" >
+			<!--<p class=>Welcome to Woolcock 365</p>-->
+			<h2>Wind Farm Home Study 2019</h2>
+			<br>
+			<p>
+				<a id=get_in__ID class='btn btn-success' >Dashboard</a>
+			</p>
+		</div>
+	</div>
+	<script>
+		$('#D__ID').on('load',function(){
+		})
+		$('#get_in__ID').on('click',function(){
+			$vm.load_module("panel-main",'',{})
+		})
+	</script>
+	<style>
+		#D__ID{
+			height:100%;
+			animation: vm_module_fadein 1.0s, D__ID 3s;
+		}
+		#page_1__ID{
+			display: flex;
+			align-items: center;
+			color: #fff;
+		    line-height: 1.1;
+		}
+		#page_1__ID h1{
+		    font-size: 80px;
+		    font-family: "Gaegu", cursive;
+		}
+		#page_1__ID h2{
+			text-shadow: 2px 2px 2px #000;
+		}
+		#demo__ID{
+			padding:0 50px;
+			background-color: #fff;
+		}
+        .panel__ID{
+            color:#fff;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding:30px 50px 20px 50px;
+			margin:0 auto 130px auto;
+        }
+		@keyframes D__ID {
+			from {padding-top: 300px;}
+			to {padding-top: 0px;}
+		}
+	    @media screen and (max-width: 992px) {
+	        #D__ID{
+	            animation: vm_module_fadein 1.0s;
+	        }
+	    }
+	</style>
+	<script>
+		function F__ID(){
+			$vm['home_ready']=1;
+		}
+	</script>
+</div>

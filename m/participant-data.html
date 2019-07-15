@@ -1,0 +1,59 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js       
+            //-------------------------------------
+            var fields="Participant ID|UID,Randomisation_Number,Randomised_by,Subject_ID,Screening_Number,Subject_Initials,Gender,DOB,_Data_Entry,_Setup,_Quest,_Login_ID,_Password";
+            m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|UID,Subject_ID,Screening_Number,Subject_Initials,Gender,DOB"
+            //-------------------------------------
+            $vm.url_$B=$vm.hosting_path.replace('cansleep','cansleep-online-questionnaire');
+            //------------------------------------
+            var online_questionnaire=$vm.url_$B;
+            //-------------------------------------
+            m.cell_render=function(records,I,field,td,set_value,source){
+                switch(field){
+                    case 'DOB':
+                        break;
+                    case '_Data_Entry':
+                        td.html("<u style='cursor:pointer'>Data Entry</u>");
+                        td.find('u').on('click',function(){
+    						$vm.load_module(m.prefix+m.panel_child,'',{record:records[I]});
+                        });
+                        break;
+                    case '_Setup':
+                        td.html("<u style='cursor:pointer'>Login Setup</u>");
+                        td.find('u').on('click',function(){
+    						$vm.load_module(m.prefix+m.online_questionnaire_setup,'',{record:records[I]});
+                        });
+                        break;
+                    case '_Quest':
+                        td.html("<u style='cursor:pointer'>Online Questionnaire</u>");
+                        td.find('u').on('click',function(){
+                            var db=""; if(window.location.toString().indexOf('db=dev')!=-1) db="&db=dev";
+                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                            var p="?username="+records[I].UID+"-"+m.Table+"&password="+records[I]._Password;
+                            var q_url=online_questionnaire+"/"+p+db+d;
+    						window.open(q_url);
+                        });
+                        break;
+                    case '_Login_ID':
+                        td.html(records[I].UID+"-"+m.Table);
+                        break;
+                }
+            }
+            //-------------------------------------
+            m.before_submit=function(record,dbv){
+                return true;
+            }
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>

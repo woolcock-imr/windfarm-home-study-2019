@@ -1,0 +1,36 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js
+            VmInclude:__CURRENT_PATH__/task-data.js
+            //-------------------------------------
+            var fields="\
+                Do you consider yourself ot have normal hearing?|normal,\
+                Do you wear any hearing aids?|hearing_aid,\
+                Did the person seen to hear/understandyou clearly?|understand\
+            ";
+            m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|Participant_uid,"+fields
+            //-------------------------------------
+            /*
+            var cell_render=m.cell_render;
+            m.cell_render=function(records,I,field,td){
+                cell_render(records,I,field,td);
+                switch(field){
+                    case 'Visit_date':
+                        td.html($vm.date_to_ddmmyyyy(records[I].Data[field]));
+                        break;
+                }
+            }
+            //-------------------------------------
+            */
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>
