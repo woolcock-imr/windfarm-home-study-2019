@@ -2,7 +2,7 @@
     <div id=form_container__ID>
         <div id=header__ID>
             Weinstein Noise Sensitivity Score
-            <div style='color:yellow'>Important: this form has not been verified by user, test only, do not use this form to collect true data</div>
+            <div style='color:yellow'>Important: this form has not been verified by the project owner, test only, do not use this form to collect true data</div>
         </div>
         <form id=F__ID>
             <div class="container">
@@ -403,9 +403,10 @@
             VmInclude:__COMPONENT__/f/form.01.js
             VmInclude:__CURRENT_PATH__/task-form.js
             //-------------------------------------
+            var ob=m.before_submit;
             m.before_submit=function(record,dbv){
                 record.wnss=(parseInt(record.wnss1)+parseInt(record.wnss2)+parseInt(record.wnss3)+parseInt(record.wnss4)+parseInt(record.wnss5)+parseInt(record.wnss6)+parseInt(record.wnss7)+parseInt(record.wnss8)+parseInt(record.wnss9)+parseInt(record.wnss10)+parseInt(record.wnss11)+parseInt(record.wnss12)+parseInt(record.wnss13)+parseInt(record.wnss14)+parseInt(record.wnss15)+parseInt(record.wnss16)+parseInt(record.wnss17)+parseInt(record.wnss18)+parseInt(record.wnss19)+parseInt(record.wnss20)+parseInt(record.wnss21)).toString();
-                return true;
+                return ob(record,dbv);
             }
             //-------------------------------------
         }

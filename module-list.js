@@ -17,6 +17,8 @@
         "s-shiftwork-form":	                {url:"$H/m/tasks/shiftwork-form.html",Table:"91000796",task_name:"shiftwork"},
         "s-weinstein-noise-sensitivity-score-data":	{url:"$H/m/tasks/weinstein-noise-sensitivity-score-data.html",Table:"91000797",form_module:"s-weinstein-noise-sensitivity-score-form"},
         "s-weinstein-noise-sensitivity-score-form":	{url:"$H/m/tasks/weinstein-noise-sensitivity-score-form.html",Table:"91000797",task_name:"weinstein-noise-sensitivity-score"},
+        "s-check-eligibility-data":	                {url:"$H/m/tasks/check-eligibility-data.html",Table:"91000798",form_module:"s-check-eligibility-form"},
+        "s-check-eligibility-form":	                {url:"$H/m/tasks/check-eligibility-form.html",Table:"91000798",task_name:"check-eligibility"},
         
         //-------------------------------------------------------------------------------------
         //app
