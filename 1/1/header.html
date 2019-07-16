@@ -5,13 +5,10 @@
             <a id="vm-hamburger_button" class=vm-hamburger-button onclick="$vm.toggle()"><i class="fa fa-bars"></i></a>
         </div>
         <div class=vm-desk-logo>
-            <img src=__CURRENT_PATH__/logo.gif width=400 />
+            <div id=vm-logo-image></div>
+            <div style='display:inline-block;color:#000;padding-left:80px'><h1>CANSLEEP Online Questionnaire</h1></div>
         </div>
         <div menu id="vm-menu">
-            <a href="?/home"><i class="fa fa-home"></i> Home</a>
-            <a href="?/panel-main">Dashboard</a>
-            <a p=1 href="?/panel-permission"><i class="fa fa-lock"></i> Permissions</a>
-            <a id=vm_signin onclick="$vm.signin();"><i class="fa fa-user"></i> Sign In</a>
             <a class=vm-hide id=vm_signout onclick=$vm.signout()><i class="fa fa-user"></i> Sign Out</a>
         </div>
     </div>
@@ -19,7 +16,6 @@
         //------------------------------------
         $('#vm-mobile_title').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
         $('.vm-desk-logo').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
-        //$('.vm-desk-logo').on('click',function(){ $vm.test(); })
         //------------------------------------
         $('.vm-dropdown').on('click',function(e){
             var d=$(this).find('.vm-dropdown-content');
@@ -55,24 +51,32 @@
     </script>
     <style>
         /*----------------------*/
+        #vm-logo-image{
+            margin-top: -22px;
+            width:360px;
+            height:69px;
+            background: url('https://image.vmiis.com/logo.woolcock.gif') no-repeat top center;
+            background-size: cover;
+            float:left;
+        }
         #header{
             height:100px;
             position:fixed;
             top:0;
             left:0;
             width:100%;
-            background:rgba(0,0,0,0.0);
+            background:rgba(100,100,100,0.2);
             z-index:10;
         }
-        .vm-desk-logo{float:left;padding:10px 30px 0 30px;cursor:pointer;}
-        #vm-menu{float:right; padding:50px 30px 0 30px;}
+        .vm-desk-logo{float:left;padding:36px 30px 0 30px;cursor:pointer;}
+        #vm-menu{ float:left;padding:50px 30px 0 30px;}
         @media screen and (max-width: 1200px){
             #header{height:50px;}
             .vm-desk-logo{display:none;}
             #vm-menu{padding:0;}
         }
         :root {
-            --menu-color: #fff;
+            --menu-color: #000;
             --menu-hover-color: #29eca6;
             --menu-hover-background-color: #555;
 
@@ -86,21 +90,10 @@
             --mobile-hamburger-color:#fff;
             --mobile-menu-background-color:#1c3144;
         }
-        #vm-logo-image{
-            margin-top: -32px;
-            width:94px;
-            height:94px;
-            border-radius: 47px;
-            background: url('__CURRENT_PATH__/header.html.logo.jpg') no-repeat top center;
-            background-size: cover;
-            float:left;
-            margin-right:1px;
-            cursor:pointer;
-        }
         #vm-logo-label-A{
-            font-family: "Gaegu", cursive;
+            font-family: Arial, sans-serif;
             color:#fff;
-            font-size: 300%;
+            font-size: 200%;
             line-height:10px;
             display:inline-block;
         }
@@ -112,6 +105,11 @@
             display:inline-block;
         }
         /*menu*/
+        #vm-menu {
+            overflow: hidden;
+            display:inline-block;
+            float:left;
+        }
         #vm-menu > a {
             color:var(--menu-color);
             float: left;

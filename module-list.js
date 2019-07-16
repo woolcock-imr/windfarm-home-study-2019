@@ -8,16 +8,15 @@
         //-------------------------------------------------------------------------------------
         //tasks
         "s-phone-screening-hearing-data":	{url:"$H/m/tasks/phone-screening-hearing-data.html",Table:"91000793",form_module:"s-phone-screening-hearing-form"},
-        "s-phone-screening-hearing-form":	{url:"$H/m/tasks/phone-screening-hearing-form.html",Table:"91000793"},
+        "s-phone-screening-hearing-form":	{url:"$H/m/tasks/phone-screening-hearing-form.html",Table:"91000793",task_name:"phone-screening-hearing"},
         "s-consent-data":	                {url:"$H/m/tasks/consent-data.html",Table:"91000794",form_module:"s-consent-form"},
-        "s-consent-form":	                {url:"$H/m/tasks/consent-form.html",Table:"91000794"},
+        "s-consent-form":	                {url:"$H/m/tasks/consent-form.html",Table:"91000794",task_name:"consent"},
         "s-general-information-data":	    {url:"$H/m/tasks/general-information-data.html",Table:"91000795",form_module:"s-general-information-form"},
-        "s-general-information-form":	    {url:"$H/m/tasks/general-information-form.html",Table:"91000795"},
+        "s-general-information-form":	    {url:"$H/m/tasks/general-information-form.html",Table:"91000795",task_name:"general-information"},
         "s-shiftwork-data":	                {url:"$H/m/tasks/shiftwork-data.html",Table:"91000796",form_module:"s-shiftwork-form"},
-        "s-shiftwork-form":	                {url:"$H/m/tasks/shiftwork-form.html",Table:"91000796"},
-
+        "s-shiftwork-form":	                {url:"$H/m/tasks/shiftwork-form.html",Table:"91000796",task_name:"shiftwork"},
         "s-weinstein-noise-sensitivity-score-data":	{url:"$H/m/tasks/weinstein-noise-sensitivity-score-data.html",Table:"91000797",form_module:"s-weinstein-noise-sensitivity-score-form"},
-        "s-weinstein-noise-sensitivity-score-form":	{url:"$H/m/tasks/weinstein-noise-sensitivity-score-form.html",Table:"91000797"},
+        "s-weinstein-noise-sensitivity-score-form":	{url:"$H/m/tasks/weinstein-noise-sensitivity-score-form.html",Table:"91000797",task_name:"weinstein-noise-sensitivity-score"},
         
         //-------------------------------------------------------------------------------------
         //app

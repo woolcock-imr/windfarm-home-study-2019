@@ -5,13 +5,10 @@
             <a id="vm-hamburger_button" class=vm-hamburger-button onclick="$vm.toggle()"><i class="fa fa-bars"></i></a>
         </div>
         <div class=vm-desk-logo>
-            <img src=__CURRENT_PATH__/logo.gif width=400 />
+            <img src=__CURRENT_PATH__/logo.gif width=400 style='margin-top:-22px' />
+            <div style='display:inline-block;color:#000;padding-left:80px;color:#fff'><h1>Online Questionnaire</h1></div>
         </div>
         <div menu id="vm-menu">
-            <a href="?/home"><i class="fa fa-home"></i> Home</a>
-            <a href="?/panel-main">Dashboard</a>
-            <a p=1 href="?/panel-permission"><i class="fa fa-lock"></i> Permissions</a>
-            <a id=vm_signin onclick="$vm.signin();"><i class="fa fa-user"></i> Sign In</a>
             <a class=vm-hide id=vm_signout onclick=$vm.signout()><i class="fa fa-user"></i> Sign Out</a>
         </div>
     </div>
@@ -64,7 +61,7 @@
             background:rgba(0,0,0,0.0);
             z-index:10;
         }
-        .vm-desk-logo{float:left;padding:10px 30px 0 30px;cursor:pointer;}
+        .vm-desk-logo{float:left;padding:36px 30px 0 30px;cursor:pointer;}
         #vm-menu{float:right; padding:50px 30px 0 30px;}
         @media screen and (max-width: 1200px){
             #header{height:50px;}

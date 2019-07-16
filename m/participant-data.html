@@ -11,9 +11,9 @@
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             m.fields_e="Participant_ID|UID,Subject_ID,Screening_Number,Subject_Initials,Gender,DOB"
             //-------------------------------------
-            $vm.url_$B=$vm.hosting_path.replace('cansleep','cansleep-online-questionnaire');
+            //$vm.url_$B=$vm.hosting_path.replace('cansleep','cansleep-online-questionnaire');
             //------------------------------------
-            var online_questionnaire=$vm.url_$B;
+            var online_questionnaire=$vm.hosting_path+"/index1.html";
             //-------------------------------------
             m.cell_render=function(records,I,field,td,set_value,source){
                 switch(field){
@@ -26,7 +26,7 @@
                         });
                         break;
                     case '_Setup':
-                        td.html("<u style='cursor:pointer'>Login Setup</u>");
+                        td.html("<u style='cursor:pointer'>Questionnaire Setup</u>");
                         td.find('u').on('click',function(){
     						$vm.load_module(m.prefix+m.online_questionnaire_setup,'',{record:records[I]});
                         });
@@ -37,7 +37,7 @@
                             var db=""; if(window.location.toString().indexOf('db=dev')!=-1) db="&db=dev";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="?username="+records[I].UID+"-"+m.Table+"&password="+records[I]._Password;
-                            var q_url=online_questionnaire+"/"+p+db+d;
+                            var q_url=online_questionnaire+p+db+d;
     						window.open(q_url);
                         });
                         break;
