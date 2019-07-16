@@ -57,6 +57,7 @@
             $vm.init(function(){
                 $vm.init_status=1;
                 $vm.show_user();
+                $vm.request({cmd:'user-info'},function(res){})
             })
             if($vm.first_module!=undefined) $vm.show($vm.first_module);
             //------------------------------------
