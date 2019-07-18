@@ -1,0 +1,24 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js
+            VmInclude:__CURRENT_PATH__/task-data.js
+            //-------------------------------------
+            var fields="sleep_med,sleep_suppl,";
+            fields+="curr_alprazolam,curr_clonazepam,curr_diazepam,curr_flunitrazepam,curr_lorazepam,curr_melatonin,curr_nitrazepam,curr_oxazepam,curr_temazepam,curr_zopiclone,curr_zolpidem,";
+            fields+="curr_agomelatine,curr_citalopram,curr_escitalopram,curr_fluoxetine,curr_lithium,curr_mirtazapine,curr_paroxetine,curr_sertraline,curr_venlafaxine,";
+            fields+="curr_dexamphetamine,curr_methylpenidate,curr_modafinil,curr_phentermine,";
+            fields+="curr_chlorpromazine,curr_haloperidol,curr_olanzapine,curr_quetiapine,curr_risperidone";
+            m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|Participant_uid,"+fields
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>

@@ -1,0 +1,20 @@
+<div id=D__ID>
+    <section>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </section>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js
+            VmInclude:__CURRENT_PATH__/task-data.js
+            //-------------------------------------
+            var fields="wemwbs_1,wemwbs_2,wemwbs_3,wemwbs_4,wemwbs_5,wemwbs_6,wemwbs_7,wemwbs_8,wemwbs_9,wemwbs_10,wemwbs_11,wemwbs_12,wemwbs_13,wemwbs_14,wemwbs";
+            m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|Participant_uid,"+fields
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>

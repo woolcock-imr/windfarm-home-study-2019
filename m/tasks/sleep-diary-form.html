@@ -1,0 +1,75 @@
+
+<div id=D__ID>
+    <section id=form_container__ID>
+        <div id=header__ID>
+            Sleep diary
+            <div style='color:yellow'>Important: this form has not been verified by the project owner, test only, do not use this form to collect true data</div>
+        </div>
+        <form id=F__ID>
+            <div class="container">
+                <!-- participant part for all tsak forms -------------------->
+                <div class="row row__ID" id=row_participant__ID>
+                    <div class="col-sm-12 col-lg-9 input__ID">
+                        <span class=label__ID>Participant</span><br>
+                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" required />
+                    </div>
+                    <div class="col-sm-12 col-lg-3 input__ID">
+                        <span class=label__ID>Participant ID</span><br>
+                        <input type=text name="Participant_uid" class=form-control readonly />
+                    </div>
+                    <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
+                </div>
+                <!---------------------------------------------------->
+                <!-- Form Inputs-------------------------------------->
+                <div class='row row__ID'>
+    				<div class="col">
+    					<span>File Upload</span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_File__ID></u>
+                            <br>
+                            <input type="file" name=File style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button" id=x_File__ID>Remove</button>
+                        </div>
+					</div>
+                </div>            
+                <!---------------------------------------------------->
+                <div class='row row__ID'>
+    				<div class="col">
+    					<span>Descrption</span>
+                        <textarea name=Description class=form-control style="height:200px" />
+					</div>
+                </div>            
+                <!---------------------------------------------------->
+                
+                <!-- submit button part for all tsak forms------------>
+                <br>
+                <div class="row">
+                    <div class=col>
+                        <button id=submit__ID type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </div>
+                <!---------------------------------------------------->
+            </div>
+        </form>
+    </section>
+    VmInclude:__COMPONENT__/m/model.01.html
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/f/form.01.js
+            VmInclude:'__CURRENT_PATH__/task-form.js'
+            //-------------------------------------
+            var load5=m.load;
+            m.load=function(){
+                load5();
+                m.set_file_link("File");
+            }
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/f/form.01.css
+        #form_container__ID{
+            max-width:700px;
+        }
+    </style>
+</div>
