@@ -1,0 +1,142 @@
+<div id=D__ID>
+    <div id=form_container__ID>
+        <div id=header__ID>
+            Neuro-otological evaluation
+            <div style='color:yellow'>Important: this form has not been verified by the project owner, test only, do not use this form to collect true data</div>
+        </div>
+        <form id=F__ID>
+            <div class="container">
+                <!-- participant part for all tsak forms -------------------->
+                <div class="row row__ID" id=row_participant__ID>
+                    <div class="col-sm-12 col-lg-9 input__ID">
+                        <span class=label__ID>Participant</span><br>
+                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" />
+                    </div>
+                    <div class="col-sm-12 col-lg-3 input__ID">
+                        <span class=label__ID>Participant ID</span><br>
+                        <input type=text name="Participant_uid" class=form-control readonly />
+                    </div>
+                    <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
+                </div>
+                <!---------------------------------------------------->
+
+                <!-- Form Inputs-------------------------------------->
+                <div id=dynamic_part__ID></div>
+                <!---------------------------------------------------->
+
+                <!-- submit button part for all tsak forms------------>
+                <br>
+    			<div class="row">
+    				<div class=col>
+    					<button id=submit__ID type="submit" class="btn btn-secondary">Submit</button>
+    				</div>
+    			</div>
+                <!---------------------------------------------------->
+            </div>
+        </form>
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            //build text input fields
+            var fields="Matted Romberg|Romberg,Unterberger,Tandem Walking|Tandem,examcomments,"
+            fields+="SponVNG Vision Denied|Spon_VNG,SponVNG Description|Nystag_description,Right Gaze (VD)|R_Gaze_VNG,RG Nystag Description|Nystag_description_RG,Left Gaze (VD)|L_Gaze_VNG,LG Nystag Description|Nystag_description_LG,Headshake VNG|Headshake_VNG,HS Nystag Description|Nystag_description_HS,L_DixHallPike,Nystag_description_LDHP,R_Dixhallpike,Nystag_description_RDHP,Supine VNG|Supine,Nystag_description_Supine,L_Head_Roll,Left Head Roll Nystag Description|Nystag_description_LHR,R_Head_Roll,Right Head Roll Nystag Description|Nystag_description_RHR,"
+            fields+="R_Otoscopy,L_Otoscopy,Otocomment,R_Static_compliance,L_Static_compliance,R_Middle_ear_presssure,L_Middle_ear_presssure,R_Ear_Canal_Volume,L_Ear_Canal_Pressure,Tympanometry Comments|Tympcomment,"
+            fields+="MaskedAC250,R_PTA_AC250Hz,L_PTA_AC250Hz,MaskedAC500,R_PTA_AC500Hz,L_PTA_AC500Hz,MaskedAC1000,R_PTA_AC1000Hz,L_PTA_AC1000Hz,MaskedAC1500,R_PTA_AC1500Hz,L_PTA_AC1500Hz,MaskedAC2000,R_PTA_AC2000Hz,L_PTA_AC2000Hz,MaskedAC3000,R_PTA_AC3000Hz,L_PTA_AC3000Hz,MaskedAC4000,R_PTA_AC4000Hz,L_PTA_AC4000Hz,MaskedAC6000,R_PTA_AC6000Hz,L_PTA_AC6000Hz,MaskedAC8000,R_PTA_AC8000Hz,L_PTA_AC8000Hz,ACPTACOMMENT,"
+            fields+="MaskedBC500,R_PTA_BC500Hz,L_PTA_BC500Hz,MaskedBC1000,R_PTA_BC1000Hz,L_PTA_BC1000Hz,MaskedBC1500,R_PTA_BC1500Hz,L_PTA_BC1500Hz,MaskedBC2000,R_PTA_BC2000Hz,L_PTA_BC2000Hz,MaskedBC3000,R_PTA_BC3000Hz,L_PTA_BC3000Hz,MaskedBC4000,R_PTA_BC4000Hz,L_PTA_BC4000Hz,BCPTACOMMENT,"
+            fields+="R_TEOAE_1000Hz,RSNR_TEOAE_1000Hz,L_TEOAE_1000Hz,LSNR_TEOAE_1000Hz,R_TEOAE_1400Hz,RSNR_TEOAE_1400Hz,L_TEOAE_1400Hz,LSNR_TEOAE_1400Hz,R_TEOAE_2000Hz,RSNR_TEOAE_2000Hz,L_TEOAE_2000Hz,LSNR_TEOAE_2000Hz,R_TEOAE_2800Hz,RSNR_TEOAE_2800Hz,L_TEOAE_2800Hz,LSNR_TEOAE_2800Hz,R_TEOAE_4000Hz,RSNR_TEOAE_4000Hz,L_TEOAE_4000Hz,LSNR_TEOAE_4000Hz,TEOAECOMMENT,"
+            fields+="R_DPOAE_500Hz,RSNR_DPOAE_500Hz,L_DPOAE_500Hz,LSNR_DPOAE_500Hz,R_DPOAE_1000Hz,RSNR_DPOAE_1000Hz,L_DPOAE_1000Hz,LSNR_DPOAE_1000Hz,R_DPOAE_2000Hz,R_DPOAE_2000Hz,L_DPOAE_2000Hz,LSNR_DPOAE_2000Hz,R_DPOAE_3000Hz,RSNR_DPOAE_3000Hz,L_DPOAE_3000Hz,LSNR_DPOAE_3000Hz,R_DPOAE_4000Hz,RSNR_DPOAE_4000Hz,L_DPOAE_4000Hz,LSNR_DPOAE_4000Hz,R_DPOAE_6000Hz,RSNR_DPOAE_6000Hz,L_DPOAE_6000Hz,LSNR_DPOAE_6000Hz,DPOAECOMMENT,"
+            fields+="R_pp_BCoVEMP,R_NLatency_BCoVEMP,R_PLatency_oVEMP,R_pp_ACoVEMP,R_NLatency_ACoVEMP,L_pp_BCoVEMP,L_NLatency_BCoVEMP,L_PLatency_oVEMP,L_pp_ACoVEMP,L_NLatency_ACoVEMP,BCOVEMP_AR,ACOVEMP_AR,BCOARVEMPCOMMENT,"
+            fields+="R_Corrected_ACCVEMP,R_PLatency_ACCVEMP,R_NLatency_ACCVEMP,R_MRE_ACCVEMP,R_Corrected_BCCVEMP,R_PLatency_BCCVEMP,R_NLatency_BCCVEMP,R_MRE_BCCVEMP,L_Corrected_ACVEMP,L_PLatency_ACcVEMP,L_NLatency_ACcVEMP,L_MRE_ACcVEMP,L_Corrected_BCCVEMP,L_PLatency_BCCVEMP,L_NLatency_BCCVEMP,L_MRE_BCCVEMP,BCCVEMP_AR,ACCVEMP_AR,BCOARVEMPCOMMENT,"
+            fields+="L_VHIT_RIGHTGAIN,L_VHIT_RIGHTGAIN_SACCADES,L_VHIT_LEFTGAIN,L_VHIT_LEFTGAIN_SACCADES,A_VHIT_RIGHTGAIN,R_VHIT_RIGHTGAIN_SACCADES,A_VHIT_LEFTGAIN,R_VHIT_LEFTGAIN_SACCADES,P_VHIT_RIGHTGAIN,P_VHIT_RIGHTGAIN_SACCADES,P_VHIT_LEFTGAIN,P_VHIT_LEFTGAIN_SACCADES,VHITCOMMENT,OverallComment"
+            var fs=fields.split(',');
+            var txt="";
+            for(var i=0;i<fs.length;i++){
+                txt+="<div class='row row__ID'><div class='col'>\r\n";
+                txt+="<span>"+fs[i].split('|')[0].replace(/_/g," ")+"</span><input type=text class=form-control name="+fs[i].split('|').pop()+">\r\n";
+                txt+="</div></div>\r\n";
+            }
+            $('#dynamic_part__ID').html(txt);
+            //-------------------------------------
+            VmInclude:__COMPONENT__/f/form.01.js
+            VmInclude:'__CURRENT_PATH__/task-form.js'
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        #D__ID{
+            height:100%;
+            overflow:auto;
+            animation: vm_module_fadein 1.0s;
+            background-color:#fff;
+        }
+        #form_container__ID{
+            margin-top:20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+
+            font-family: Verdana,sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        #form_container__ID .row__ID{
+            padding:6px 5px;
+        }
+        #form_container__ID .row__ID:hover{
+            background-color: #ddd;
+        }
+        #header__ID{
+            background-color:#727b84;
+            color:#fff;
+            padding:10px 15px 10px 15px;
+            font-size:120%;
+            border:1px solid #bbb;
+            border-bottom-width: 0;
+        }
+        #F__ID{
+            border:1px solid #bbb;
+            border-top-width: 0;
+            padding:6px 15px 20px 15px;
+            margin-bottom:200px;
+        }
+        #F__ID fieldset {
+            border: 0px solid #c0c0c0;
+            margin: 0;
+            padding: 0;
+        }
+        .row__ID span{
+            font-weight:bold;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        @media screen and (max-width:768px){
+			#form_container__ID{
+				padding:20px 10px 50px 10px;
+			}
+		}
+	    .C__ID {
+	        background-color: #ccc;
+	    }
+		.label__ID{
+			font-weight: bold;
+			padding:8px 0 5px 0;
+		}
+		.radio__ID{
+			padding-left:40px;
+		}
+		.radio__ID label{
+			cursor:pointer;
+			margin: 0;
+		}
+		.radio__ID label:hover{
+			background-color: #999;
+		}
+        
+        
+        .hr__ID{
+            margin:6px 0;
+            padding:0;
+        }
+    </style>
+</div>

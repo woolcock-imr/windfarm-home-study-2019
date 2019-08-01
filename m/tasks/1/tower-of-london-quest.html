@@ -1,0 +1,126 @@
+
+<div id=D__ID>
+    <section style='text-align: center'>
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1100" height="800" align="middle">
+            <param value="__CURRENT_PATH__../flash/NBack2.swf?v=8"/>
+            <!--[if !IE]>-->
+            <object type="application/x-shockwave-flash" data="__CURRENT_PATH__../flash/NBack2.swf?v=8" width="1100" height="800">
+                <param value="__CURRENT_PATH__../flash/NBack2.swf?v=8"/>
+            <!--<![endif]-->
+                <a href="//www.adobe.com/go/getflash">
+                    <img src="//www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+                </a>
+            <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
+        </object>
+    </section>
+    <section style='text-align: center'>
+        <form id=F__ID>
+            <div class="container" id=row_participant__ID>
+                <!-- participant part for all tsak forms -------------------->
+                <div class="row row__ID">
+                    <div class="col-sm-12 col-lg-9 input__ID">
+                        <span class=label__ID>Participant</span><br>
+                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" required />
+                    </div>
+                    <div class="col-sm-12 col-lg-3 input__ID">
+                        <span class=label__ID>Participant ID</span><br>
+                        <input type=text name="Participant_uid" class=form-control readonly />
+                    </div>
+                    <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
+                </div>
+                <!---------------------------------------------------->
+            </div>
+        </form>
+    </section>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/f/form.01.js
+            VmInclude:'__CURRENT_PATH__/task-form.js'
+            //-------------------------------------
+            if($vm.online_questionnaire==1){
+                $('#row_participant__ID').hide();
+                $('#F__ID').css('border-width','0px');
+                $('#F__ID').css('border-top-width','0px');
+            }
+            var new_task_record;
+            var load5=m.load;
+            m.load=function(){
+                load5();
+                new_task_record={};
+                g_nback2_callback=flash_callback;
+            }
+            //-------------------------------------
+            var flash_callback=function(param){
+                var a=param.split('&');
+                for(var i=0;i<a.length;i++){
+                    var b=a[i].split('=');
+                    try{
+                        new_task_record[b[0]]=b[1];
+                    }catch(e){}
+                }
+                calc();
+                save();
+            };
+            //-------------------------------------
+            var calc=function(){
+                var nno=new_task_record['NNO'].split(",");
+                var nrt=new_task_record['NRT'].split(",");
+                var nac=new_task_record['NAC'].split(",");
+                var ngta=0;
+                var nrgt=0;
+                var ntcr=0;
+                var ntic=0;
+                var ntmr=0;
+                var nmis=0;
+                for (var i=0;i<nno.length;i++){
+                    if( nac[i]=='CM' && nno[i]!='PRE')   ntcr++;
+                    if( nac[i]=='CN' && nno[i]!='PRE')   ntcr++;
+                    if( nac[i]=='O' && nno[i]!='PRE')    nmis++;
+                    if( nac[i]=='FM' && nno[i]!='PRE')   ntic++;
+                    if( nac[i]=='FN' && nno[i]!='PRE')   ntic++;
+                    if( nac[i]=='W' && nno[i]!='PRE')    ntic++;
+                    if( nno[i]!='PRE')   nrgt=nrgt+parseInt(nrt[i]);
+                }
+                if( ntcr+ntic > 0){
+                    ngta=(100*ntcr/(ntcr+ntic)).toFixed(1)
+                    new_task_record['NGTA']=ngta;
+                }
+                else  new_task_record['NGTA']='0';
+                new_task_record['NBACK']='P';
+                new_task_record['NTCR']=ntcr;
+                new_task_record['NMIS']=nmis;
+                new_task_record['NTIC']=ntic;
+                new_task_record['NGRT']=nrgt;
+            }
+            //-------------------------------------
+            var save=function(){
+                new_task_record.Participant=$('#F__ID input[name=Participant]').val();
+                new_task_record.Participant_uid=$('#F__ID input[name=Participant_uid]').val();
+                var data=new_task_record;
+                var dbv={}
+                if(m.before_submit!=undefined) r=m.before_submit(data,dbv);
+                if(r==false) return;
+                var req={cmd:"add",qid:m.qid,db_pid:m.db_pid,data:data,dbv:dbv,file:{}};
+                if(m.xml==1 || m.xml==true) req={cmd:"add",qid:m.qid,db_pid:m.db_pid,data:data,dbv:dbv,file:{},xml:"1"};
+                $VmAPI.request({data:req,callback:function(res){
+                    $vm.refresh=1;
+                    if(m.input.goback!=undefined) window.history.go(-1);            //from grid
+                    else $vm.alert('Your data has been successfully submitted');    //standalone
+                }});
+                //--------------------------------------------------------
+            }
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/f/form.01.css
+        #F__ID{
+            margin-left:10px;
+            width:700px;
+            display:inline-block;
+            border-top-width: 1px;
+        }
+    </style>
+</div>

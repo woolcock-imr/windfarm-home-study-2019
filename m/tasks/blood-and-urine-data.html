@@ -1,0 +1,20 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js
+            VmInclude:__CURRENT_PATH__/task-data.js
+            //-------------------------------------
+            var fields="Sodium,Potassium,Chloride,Bicarbonate,Anion_Gap,Urea,eGFR,Urate,Bilirubin,AST,ALT,GGT,Alkaline_Phosphatase,Protein,Albumin,Globulin,Calcium,Corrected_Calcium,Phosphate,Glucose,Cholesterol,Triglycerides,HDL_Chol,Cholesterol_HDL_C_Ratio,VLDL_Cholesterol,LDL_Chol,Hb,RCC,Hct,MCV,MCH,MCHC,RDW,PLT,WCC,Neutrophils,Lymphocytes,Monocytes,Eosinophils,Basophils,Insulin,HbA1c_NGSP,HbA1c_IFCC,UrinepH,UrineVolume,UrineDuration,AdrenalineExcr,AdrenalineCalc,UrAdrenaline,NoradrenalineExcr,NoradrenalineCalc,UrNoradrenaline,UrCreatinine,Creatinine";
+            m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|Participant_uid,"+fields
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>

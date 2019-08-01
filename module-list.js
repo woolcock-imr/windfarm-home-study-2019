@@ -47,6 +47,43 @@
         "b-sleep-disorders-and-patterns-form":	{url:"$H/m/tasks/sleep-disorders-and-patterns-form.html",Table:"91000810",task_name:"sleep-disorders-and-patterns"},
         "b-warwick-edinburgh-mental-well-being-scale-data":	{url:"$H/m/tasks/warwick-edinburgh-mental-well-being-scale-data.html",Table:"91000811",form_module:"b-warwick-edinburgh-mental-well-being-scale-form"},
         "b-warwick-edinburgh-mental-well-being-scale-form":	{url:"$H/m/tasks/warwick-edinburgh-mental-well-being-scale-form.html",Table:"91000811",task_name:"warwick-edinburgh-mental-well-being-scale"},
+        "b-kessler-10-data":	            {url:"$H/m/tasks/kessler-10-data.html",Table:"91000812",form_module:"b-kessler-10-form"},
+        "b-kessler-10-form":	            {url:"$H/m/tasks/kessler-10-form.html",Table:"91000812",task_name:"kessler-10"},
+        "b-insomnia-severity-index-data":	{url:"$H/m/tasks/insomnia-severity-index-data.html",Table:"91000813",form_module:"b-insomnia-severity-index-form"},
+        "b-insomnia-severity-index-form":	{url:"$H/m/tasks/insomnia-severity-index-form.html",Table:"91000813",task_name:"insomnia-severity-index"},
+        
+        "b-eysenck-data":	{url:"$H/m/tasks/eysenck-data.html",Table:"91000814",form_module:"b-eysenck-form"},
+        "b-eysenck-form":	{url:"$H/m/tasks/eysenck-form.html",Table:"91000814",task_name:"eysenck"},
+        "b-ess-data":	{url:"$H/m/tasks/epworth-sleepiness-scale-data.html",Table:"91000815",form_module:"b-ess-form"},
+        "b-ess-form":	{url:"$H/m/tasks/epworth-sleepiness-scale-form.html",Table:"91000815",task_name:"epworth-sleepiness-scale"},
+        "b-dass21-data":	{url:"$H/m/tasks/depression-anxiety-stress-scales-data.html",Table:"91000816",form_module:"b-dass21-form"},
+        "b-dass21-form":	{url:"$H/m/tasks/depression-anxiety-stress-scales-form.html",Table:"91000816",task_name:"depression-anxiety-stress-scales"},
+        "b-vas-data":	{url:"$H/m/tasks/visual-analogue-scale-data.html",Table:"91000817",form_module:"b-vas-form"},
+        "b-vas-form":	{url:"$H/m/tasks/visual-analogue-scale-form.html",Table:"91000817",task_name:"visual-analogue-scale"},
+        "b-nas-data":	{url:"$H/m/tasks/noise-annoyance-scale-data.html",Table:"91000818",form_module:"b-nas-form"},
+        "b-nas-form":	{url:"$H/m/tasks/noise-annoyance-scale-form.html",Table:"91000818",task_name:"noise-annoyance-scale"},
+        
+        "b-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000819",form_module:"b-tower-of-london-form",quest_module:"b-tower-of-london-quest"},
+        "b-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000819"},
+        "b-tower-of-london-quest":	            {url:"$H/m/tasks/tower-of-london-quest.html",Table:"91000819",task_name:"tower-of-london"},
+        
+        "b-nback2-data":	            {url:"$H/m/tasks/nback2-data.html",Table:"91000820",form_module:"b-nback2-form",quest_module:"b-nback2-quest"},
+        "b-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000820"},
+        "b-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000820",task_name:"2-back"},
+        
+        "b-height-weight-data":	            {url:"$H/m/tasks/height-weight-data.html",Table:"91000821",form_module:"b-height-weight-form"},
+        "b-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000821"},
+        
+        "b-blood-pressure-data":	            {url:"$H/m/tasks/blood-pressure-data.html",Table:"91000822",form_module:"b-blood-pressure-form"},
+        "b-blood-pressure-form":	            {url:"$H/m/tasks/blood-pressure-form.html",Table:"91000822"},
+        "b-pwv-data":	            {url:"$H/m/tasks/pwv-data.html",Table:"91000823",form_module:"b-pwv-form"},
+        "b-pwv-form":	            {url:"$H/m/tasks/pwv-form.html",Table:"91000823"},
+        "b-psg-data":	            {url:"$H/m/tasks/psg-300-data.html",Table:"91000824",form_module:"b-psg-form"},
+        "b-psg-form":	            {url:"$H/m/tasks/psg-300-form.html",Table:"91000824"},
+        "b-blood-and-urine-data":	            {url:"$H/m/tasks/blood-and-urine-data.html",Table:"91000825",form_module:"b-blood-and-urine-form"},
+        "b-blood-and-urine-form":	            {url:"$H/m/tasks/blood-and-urine-form.html",Table:"91000825"},
+        "b-neuro-otological-evaluation-data":	            {url:"$H/m/tasks/neuro-otological-evaluation-data.html",Table:"91000826",form_module:"b-neuro-otological-evaluation-form"},
+        "b-neuro-otological-evaluation-form":	            {url:"$H/m/tasks/neuro-otological-evaluation-form.html",Table:"91000826"},
         //-------------------------------------------------------------------------------------
         //app
         "panel-main":                       {url:"$H/m/panel-main.html",router:1},

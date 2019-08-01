@@ -1,0 +1,20 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js
+            VmInclude:__CURRENT_PATH__/task-data.js
+            //-------------------------------------
+            var fields="Visit,Heart_Rate_Trial1,Pulse_Wave_Velocity_Trial1,Pulse_Transit_Time_Trial1,PWV_Distance_Trial1,patientreport1,clinicalreport1,Heart_Rate_Trial2,Pulse_Wave_Velocity_Trial2,Pulse_Transit_Time_Trial2,PWV_Distance_Trial2,patientreport2,clinicalreport2";
+            m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+            m.fields_e="Participant_ID|Participant_uid,"+fields
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>

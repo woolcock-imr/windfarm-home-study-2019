@@ -1,0 +1,105 @@
+<div id=D__ID>
+	<section id=form_container__ID>
+		<div id=header__ID>
+			Visual Analogue Scale
+            <div style='color:yellow'>Important: this form has not been verified by the project owner, test only, do not use this form to collect true data</div>
+		</div>
+		<form id=F__ID>
+			<div class="container">
+                <!-- participant part for all tsak forms -------------------->
+                <div class="row row__ID" id=row_participant__ID>
+                    <div class="col-sm-9 col-lg-9 input__ID">
+                        <span class=label__ID>Participant</span><br>
+                        <input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant" />
+                    </div>
+                    <div class="col-sm-3 col-lg-3 input__ID">
+                        <span class=label__ID>Participant ID</span><br>
+                        <input type=text name="Participant_uid" class=form-control readonly />
+                    </div>
+                    <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
+                </div>
+                <!---------------------------------------------------->
+				<div class="row row__ID">
+					<div class=col>
+						<b>
+							Please click along the line in which best describes your current annoyance with the noise.
+						</b>
+					</div>
+				</div>
+                <hr class=hr__ID>
+                <!---------------------------------------------------->
+				<div class="row row__ID">
+					<div class=col style='text-align: center'>
+						<b>NOISE ANNOYANCE</b>
+					</div>
+				</div>
+				<div class="row row__ID">
+					<div class="col-lg-2 text-left">Not Annoyed</div>
+					<div class="col-lg-8"><input type="range" min="0" max="100" class='slider__ID' name=ANNOYANCE></div>
+					<div class="col-lg-2 text-right">Very Annoyed</div>
+				</div>
+                <hr class=hr__ID>
+                <!---------------------------------------------------->
+                
+                <br>
+				<div class="row">
+					<div class=col>
+						<button id=submit__ID type="submit" class="btn btn-secondary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+    VmInclude:__COMPONENT__/m/model.01.html
+	<script>
+		function F__ID(){
+			//-------------------------------------
+            VmInclude:__COMPONENT__/f/form.01.js
+            VmInclude:__CURRENT_PATH__/task-form.js
+			//-------------------------------------
+            var load5=m.load;
+            m.load=function(){
+				load5();
+                if(m.input.record==undefined || m.input.record!=undefined && m.input.record.ID==undefined){
+					$('.slider__ID').addClass('slider_noclick__ID');
+				}
+				else $('.slider__ID').removeClass('slider_noclick__ID');
+            }
+            //-------------------------------------
+			$('.slider__ID').on('click',function(){
+				$(this).removeClass('slider_noclick__ID');
+			})
+            //-------------------------------------
+		}
+	</script>
+	<style>
+		VmInclude:__COMPONENT__/f/form.01.css
+		#form_container__ID{
+			max-width:1000px;
+		}
+		.label__ID{
+			width:100%;
+		}
+		.slider__ID{
+			width:100%;
+		}
+		#form_container__ID .row__ID:hover{
+			background-color: #f0f0f0;
+		}		
+		.slider_noclick__ID{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+            outline: none;
+			height: 4px;
+			width: 100%;
+			background-color: rgb(227, 221, 216);;
+		}
+		.slider_noclick__ID::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			width: 0;
+			height: 0;
+		}
+
+	</style>
+</div>
