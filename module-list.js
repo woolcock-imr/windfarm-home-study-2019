@@ -72,18 +72,18 @@
         "b-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000820",task_name:"2-back"},
         
         "b-height-weight-data":	            {url:"$H/m/tasks/height-weight-data.html",Table:"91000821",form_module:"b-height-weight-form"},
-        "b-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000821"},
+        "b-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000821",task_name:"height-weight"},
         
         "b-blood-pressure-data":	            {url:"$H/m/tasks/blood-pressure-data.html",Table:"91000822",form_module:"b-blood-pressure-form"},
         "b-blood-pressure-form":	            {url:"$H/m/tasks/blood-pressure-form.html",Table:"91000822"},
         "b-pwv-data":	            {url:"$H/m/tasks/pwv-data.html",Table:"91000823",form_module:"b-pwv-form"},
-        "b-pwv-form":	            {url:"$H/m/tasks/pwv-form.html",Table:"91000823"},
+        "b-pwv-form":	            {url:"$H/m/tasks/pwv-form.html",Table:"91000823",task_name:"pwv"},
         "b-psg-data":	            {url:"$H/m/tasks/psg-300-data.html",Table:"91000824",form_module:"b-psg-form"},
-        "b-psg-form":	            {url:"$H/m/tasks/psg-300-form.html",Table:"91000824"},
+        "b-psg-form":	            {url:"$H/m/tasks/psg-300-form.html",Table:"91000824",task_name:"psg"},
         "b-blood-and-urine-data":	            {url:"$H/m/tasks/blood-and-urine-data.html",Table:"91000825",form_module:"b-blood-and-urine-form"},
-        "b-blood-and-urine-form":	            {url:"$H/m/tasks/blood-and-urine-form.html",Table:"91000825"},
+        "b-blood-and-urine-form":	            {url:"$H/m/tasks/blood-and-urine-form.html",Table:"91000825",task_name:"blood-and-urine"},
         "b-neuro-otological-evaluation-data":	            {url:"$H/m/tasks/neuro-otological-evaluation-data.html",Table:"91000826",form_module:"b-neuro-otological-evaluation-form"},
-        "b-neuro-otological-evaluation-form":	            {url:"$H/m/tasks/neuro-otological-evaluation-form.html",Table:"91000826"},
+        "b-neuro-otological-evaluation-form":	            {url:"$H/m/tasks/neuro-otological-evaluation-form.html",Table:"91000826",task_name:"neuro-otological-evaluation"},
         //-------------------------------------------------------------------------------------
         //app
         "panel-main":                       {url:"$H/m/panel-main.html",router:1},
