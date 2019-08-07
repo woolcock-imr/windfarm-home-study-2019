@@ -53,7 +53,6 @@
                 var check=0;
                 if($vm.online_questionnaire==1) check=check_12('read-s2');
                 else check=check_12('read');
-                
                 if(check===0){
                     $vm.alert('Thank you for taking the time to complete our questionnaire. Unfortunately, due to the responses you have given, you are ineligible to continue with the questionnaires and this study. If you have any questions please contact Wafaa Ezz on 9114 0493 or email windfarmhomestudy@woolcock.org.au. If you would like more information on other research  projects that you may be suitable for, please visit www.woolcock.org.au');
                     return false;
@@ -69,7 +68,6 @@
                 jQuery.ajaxSetup({async:false});
                 if($vm.api_type=="sqlserver"){
                     //-----------------
-                    jQuery.ajaxSetup({async:false});
                     if(output==1){
                         var tb=$vm.module_list["s-consent-data"].Table;
                         var sql="select Information from [TABLE-"+tb+"] where PUID="+$('#F__ID input[name=Participant_uid]').val();
@@ -78,9 +76,16 @@
                         $VmAPI.request({data:req,callback:function(res){
                             if(res.records.length==0){
                                 output=0;
+                                console.log("No consent record");
+                            }
+                            else if(res.records.length>1){
+                                alert("There are more than 1 consent records of this participant. Please check the records.");
+                                output=0;
+                                console.log("There are more than 1 consent records");
                             }
                             else{
                                 if(res.records[0].Consent=='No') output=0;
+                                console.log("consent:"+res.records[0].Consent);
                             }
                         }})
                     }
@@ -92,10 +97,18 @@
                         $VmAPI.request({data:req,callback:function(res){
                             if(res.records.length==0){
                                 output=0;
+                                console.log("No general-information record");
+                            }
+                            else if(res.records.length>1){
+                                alert("There are more than 1 general-information records of this participant. Please check the records.");
+                                output=0;
+                                console.log("There are more than 1 general-information records");
                             }
                             else{
                                 if(res.records[0].travel=='Yes') {output=0;}
                                 else if(res.records[0].pregnant=='Yes') {output=0;}
+                                console.log("Trival:"+res.records[0].travel);
+                                console.log("Pregnant:"+res.records[0].pregnant);
                             }
                         }})
                     }
@@ -107,13 +120,19 @@
                         $VmAPI.request({data:req,callback:function(res){
                             if(res.records.length==0){
                                 output=0;
+                                console.log("No shiftwork record");
+                            }
+                            else if(res.records.length>1){
+                                alert("There are more than 1 shiftwork records of this participant. Please check the records.");
+                                output=0;
+                                console.log("There are more than 1 shiftwork records");
                             }
                             else{
                                 if(res.records[0].current_work=='Yes') {output=0;}
+                                console.log("current_work:"+res.records[0].current_work);
                             }
                         }})
                     }
-                    jQuery.ajaxSetup({async:true});
                     if(output==1){
                         var tb=$vm.module_list["s-weinstein-noise-sensitivity-score-data"].Table;
                         var sql="select Information from [TABLE-"+tb+"] where PUID="+$('#F__ID input[name=Participant_uid]').val();
@@ -122,9 +141,17 @@
                         $VmAPI.request({data:req,callback:function(res){
                             if(res.records.length==0){
                                 output=0;
+                                console.log("No weinstein-noise-sensitivity-score record");
+                            }
+                            else if(res.records.length>1){
+                                alert("There are more than 1 weinstein-noise-sensitivity-score records of this participant. Please check the records.");
+                                output=0;
+                                console.log("There are more than 1 weinstein-noise-sensitivity-score records");
                             }
                             else{
-                                if(parseInt(res.records[0].wnss)<58) {output=0;}
+                                if(res.records[0].wnss=="NaN") {output=0;}
+                                else if(parseInt(res.records[0].wnss)<58) {output=0;}
+                                console.log("wnss:"+res.records[0].wnss);
                             }
                         }})
                     }
