@@ -75,7 +75,7 @@
         "b-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000821",task_name:"height-weight"},
         
         "b-blood-pressure-data":	            {url:"$H/m/tasks/blood-pressure-data.html",Table:"91000822",form_module:"b-blood-pressure-form"},
-        "b-blood-pressure-form":	            {url:"$H/m/tasks/blood-pressure-form.html",Table:"91000822"},
+        "b-blood-pressure-form":	            {url:"$H/m/tasks/blood-pressure-form.html",Table:"91000822",task_name:"blood-pressure"},
         "b-pwv-data":	            {url:"$H/m/tasks/pwv-data.html",Table:"91000823",form_module:"b-pwv-form"},
         "b-pwv-form":	            {url:"$H/m/tasks/pwv-form.html",Table:"91000823",task_name:"pwv"},
         "b-psg-data":	            {url:"$H/m/tasks/psg-300-data.html",Table:"91000824",form_module:"b-psg-form"},
