@@ -25,22 +25,22 @@
     				<div class="col">
                         <span>1. Have you been diagnosed with any of the following sleep conditions by a doctor?</span>
                         <ul>
-                            <label><input type="checkbox"  name="diagnosis_OSA" /> Sleep Apnea</label><br> 
-                            <label><input type="checkbox"  name="diagnosis_insom" /> Insomnia</label><br>
-                            <label><input type="checkbox"  name="diagnosis_narco" /> Narcolepsy</label><br>
-                            <label><input type="checkbox"  name="diagnosis_RLS" /> Restless Legs or Periodic Leg Movements during Sleep</label><br>
-                            <label><input type="checkbox"  name="diagnosis_brux" /> Bruxism (teeth grinding)</label><br>
-                            <label><input type="checkbox"  name="diagnosis_REM" /> REM Behavioural Disorder</label><br>
-                            <label><input type="checkbox"  name="diagnosis_paras" /> Parasomnias (sleep walking, sleep talking, night terrors)</label><br>
-                            <label><input type="checkbox"  name="diagnosis_hypo" /> Obesity Hypoventilation Syndrome</label><br>
-                            <label><input type="checkbox"  name="diagnosis_DSPD" /> Delayed Sleep Phase Disorder</label><br>
+                            <label><input type="checkbox"  name="diagnosis_OSA" id=q1_1__ID /> Sleep Apnea</label><br> 
+                            <label><input type="checkbox"  name="diagnosis_insom" id=q1_2__ID /> Insomnia</label><br>
+                            <label><input type="checkbox"  name="diagnosis_narco" class=q1_other__ID /> Narcolepsy</label><br>
+                            <label><input type="checkbox"  name="diagnosis_RLS" class=q1_other__ID /> Restless Legs or Periodic Leg Movements during Sleep</label><br>
+                            <label><input type="checkbox"  name="diagnosis_brux" class=q1_other__ID /> Bruxism (teeth grinding)</label><br>
+                            <label><input type="checkbox"  name="diagnosis_REM" class=q1_other__ID /> REM Behavioural Disorder</label><br>
+                            <label><input type="checkbox"  name="diagnosis_paras" class=q1_other__ID /> Parasomnias (sleep walking, sleep talking, night terrors)</label><br>
+                            <label><input type="checkbox"  name="diagnosis_hypo" class=q1_other__ID /> Obesity Hypoventilation Syndrome</label><br>
+                            <label><input type="checkbox"  name="diagnosis_DSPD" class=q1_other__ID /> Delayed Sleep Phase Disorder</label><br>
                             <label><input type="checkbox"  name="diagnosis_none" /> I have not been diagnosed with any sleep condition</label><br>
                         </ul>
     				</div>
     			</div>
                 <hr class=hr__ID>
                 <!---------------------------------------------------->
-                <div class='row row__ID'>
+                <div class='row row__ID' id=q2__ID>
     				<div class="col">
                         <span>2. If you selected 'Sleep Apnea' as a diagnosed condition for question 1, were any of the following treatments recommended or prescribed for your sleep apnea? (multiple selections allowed)
                                 <br><br>If you select any of following treatments, please also indicate if you are still using this treatment on a regular basis.</span>
@@ -180,7 +180,7 @@
     			</div>
                 <hr class=hr__ID>
                 <!---------------------------------------------------->
-                <div class='row row__ID'>
+                <div class='row row__ID' id=q3__ID>
                     <div class="col">
                         <span>3. If you selected 'Insomnia' as a diagnosed condition for question 1, were any of the following treatments recommended or prescribed for your insomnia? (multiple selections allowed) 
                                 <br><br>If you select any of following treatments, please also indicate if you are still using this treatment on a regular basis.</span>
@@ -278,7 +278,7 @@
     			</div>
                 <hr class=hr__ID>
                 <!---------------------------------------------------->
-                <div class='row row__ID'>
+                <div class='row row__ID' id=q4__ID>
                     <div class="col">
                         <span>4. For any other diagnosed condition, were any of the following treatments recommended or prescribed for your condition? (multiple selections allowed)  
                             <br><br>If you select any of following treatments, please also indicate if you are still using this treatment on a regular basis.</span>
@@ -396,6 +396,30 @@
             //-------------------------------------
             VmInclude:__COMPONENT__/f/form.01.js
             VmInclude:__CURRENT_PATH__/task-form.js
+            //-------------------------------------
+            var old_load=m.load;
+            m.load=function(){
+                old_load();
+                $('#q2__ID').show();
+                $('#q3__ID').show();
+                $('#q4__ID').show();
+                if(m.input.record==undefined){
+                    $('#q2__ID').hide();
+                    $('#q3__ID').hide();
+                    $('#q4__ID').hide();
+                }
+            }
+            //-------------------------------------
+            $('#q1_1__ID').on('click',function(){   if($(this).is(":checked")==true) $('#q2__ID').show(); else $('#q2__ID').hide();  })
+            $('#q1_2__ID').on('click',function(){   if($(this).is(":checked")==true) $('#q3__ID').show(); else $('#q3__ID').hide();  })
+            $('.q1_other__ID').on('click',function(){   
+                var R=false;
+                $('.q1_other__ID').each(function(index){
+                    var b=$(this).is(":checked");
+                    if(b==true) R=true;
+                })  
+                if(R==true) $('#q4__ID').show(); else $('#q4__ID').hide();  
+            })
             //-------------------------------------
         }
     </script>
