@@ -347,33 +347,35 @@
                                     <label><input type="radio"  name="nap" value=0 /> No</label>
                                 </ul>
                             </div>
-                            <div>
-                                i. If Yes, how many times has this occurred in the last month:<br>
-                                <ul>
-                                    <label><input type="radio"  name="nap_number" required value=1 /> Only once</label><br>
-                                    <label><input type="radio"  name="nap_number" value=2 /> Once a week</label><br>
-                                    <label><input type="radio"  name="nap_number" value=3 /> 2-4 times a week</label><br>
-                                    <label><input type="radio"  name="nap_number" value=4 /> 5-14 times a week</label><br>
-                                    <label><input type="radio"  name="nap_number" value=5 /> More than 15 time a week</label><br>
-                                    <label><input type="radio"  name="nap_number" value=0 /> Not sure</label><br>
-                                </ul>
-                            </div>
-                            <div>
-                                ii. On average, how long are your naps in minutes?<br>
-                                <ul>
-                                    <input class="form-control" type="text" placeholder="Minutes" name="nap_length" />
-                                </ul>
-                            </div>
-                            <div>
-                                    iii. How often do you feel refreshed after napping?<br>
-                                <ul>
-                                    <label><input type="radio"  name="nap_refreshed" required value=0 /> Never</label><br>
-                                    <label><input type="radio"  name="nap_refreshed" value=1 /> Rarely</label><br>
-                                    <label><input type="radio"  name="nap_refreshed" value=2 /> Sometimes</label><br>
-                                    <label><input type="radio"  name="nap_refreshed" value=3 /> Usually</label><br>
-                                    <label><input type="radio"  name="nap_refreshed" value=4 /> Always</label><br>
-                                    <label><input type="radio"  name="nap_refreshed" value=5 /> Not sure</label><br>
-                                </ul>
+                            <div id=q5_2__ID>
+                                <div>
+                                    i. If Yes, how many times has this occurred in the last month:<br>
+                                    <ul>
+                                        <label><input type="radio"  name="nap_number" value=1 /> Only once</label><br>
+                                        <label><input type="radio"  name="nap_number" value=2 /> Once a week</label><br>
+                                        <label><input type="radio"  name="nap_number" value=3 /> 2-4 times a week</label><br>
+                                        <label><input type="radio"  name="nap_number" value=4 /> 5-14 times a week</label><br>
+                                        <label><input type="radio"  name="nap_number" value=5 /> More than 15 time a week</label><br>
+                                        <label><input type="radio"  name="nap_number" value=0 /> Not sure</label><br>
+                                    </ul>
+                                </div>
+                                <div>
+                                    ii. On average, how long are your naps in minutes?<br>
+                                    <ul>
+                                        <input class="form-control" type="text" placeholder="Minutes" name="nap_length" />
+                                    </ul>
+                                </div>
+                                <div>
+                                        iii. How often do you feel refreshed after napping?<br>
+                                    <ul>
+                                        <label><input type="radio"  name="nap_refreshed" value=0 /> Never</label><br>
+                                        <label><input type="radio"  name="nap_refreshed" value=1 /> Rarely</label><br>
+                                        <label><input type="radio"  name="nap_refreshed" value=2 /> Sometimes</label><br>
+                                        <label><input type="radio"  name="nap_refreshed" value=3 /> Usually</label><br>
+                                        <label><input type="radio"  name="nap_refreshed" value=4 /> Always</label><br>
+                                        <label><input type="radio"  name="nap_refreshed" value=5 /> Not sure</label><br>
+                                    </ul>
+                                </div>
                             </div>
                         </ul>
     				</div>
@@ -403,11 +405,14 @@
                 $('#q2__ID').show();
                 $('#q3__ID').show();
                 $('#q4__ID').show();
+                $('#q5_2__ID').show();
                 if(m.input.record==undefined){
                     $('#q2__ID').hide();
                     $('#q3__ID').hide();
                     $('#q4__ID').hide();
+                    $('#q5_2__ID').hide();
                 }
+                process_q5();
             }
             //-------------------------------------
             $('#q1_1__ID').on('click',function(){   if($(this).is(":checked")==true) $('#q2__ID').show(); else $('#q2__ID').hide();  })
@@ -420,6 +425,26 @@
                 })  
                 if(R==true) $('#q4__ID').show(); else $('#q4__ID').hide();  
             })
+            //-------------------------------------
+            $('#F__ID input[name=nap]').on('click',function(){
+                process_q5();
+            })
+            //-------------------------------------
+            var process_q5=function(){
+                var v=$('#F__ID input[name=nap]:checked').val();
+                if(v==1){
+                    $('#q5_2__ID').show();
+                    $('#F__ID input[name=nap_number]').attr('required','true');
+                    $('#F__ID input[name=nap_length]').attr('required','true');
+                    $('#F__ID input[name=nap_refreshed]').attr('required','true');
+                }
+                else{
+                    $('#q5_2__ID').hide();
+                    $('#F__ID input[name=nap_number]').removeAttr('required');
+                    $('#F__ID input[name=nap_length]').removeAttr('required');
+                    $('#F__ID input[name=nap_refreshed]').removeAttr('required');
+                }
+            }
             //-------------------------------------
         }
     </script>
