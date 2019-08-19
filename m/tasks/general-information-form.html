@@ -24,7 +24,7 @@
                 <div class='row row__ID'>
     				<div class="col">
                         <span>Age</span>
-                        <input type="text" class="form-control" name=age />
+                        <input type="text" class="form-control" name=age  required />
     				</div>
     			</div>
                 <hr class=hr__ID>
@@ -32,8 +32,7 @@
                 <div class='row row__ID'>
     				<div class="col">
                         <span>Gender</span>
-                        <select class="form-control" name=gender >
-                            <option></option>
+                        <select class="form-control" name=gender required >
                             <option>Male</option>
                             <option>Female</option>
                             <option>Indeterminate/Intersex/Unspecified</option>
@@ -46,7 +45,7 @@
     				<div class="col">
                         <span>Will you be away from home or travelling overseas for more than one month in the next 2 months?</span>
                         <ul>
-                            <label><input type="radio" name=travel value=Yes /> Yes</label> 
+                            <label><input type="radio" name=travel value=Yes required /> Yes</label> 
                             <label><input type="radio" name=travel value=No /> No</label><br>
                         </ul>
     				</div>
@@ -57,7 +56,7 @@
     				<div class="col">
                         <span>Are you or anyone in the household currently pregnant/breastfeeding or will be trying in the next 2 months?</span>
                         <ul>
-                            <label><input type="radio" name=pregnant value=Yes /> Yes</label> 
+                            <label><input type="radio" name=pregnant value=Yes required /> Yes</label> 
                             <label><input type="radio" name=pregnant value=No /> No</label><br>
                         </ul>
     				</div>
@@ -68,7 +67,7 @@
     				<div class="col">
                         <span>Are there any children under 5 years old living or regulary staying in the home</span>
                         <ul>
-                            <label><input type="radio" name=children value=Yes /> Yes</label> 
+                            <label><input type="radio" name=children value=Yes required /> Yes</label> 
                             <label><input type="radio" name=children value=No /> No</label><br>
                         </ul>
     				</div>
