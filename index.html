@@ -26,6 +26,7 @@
             $vm.api_type="sqlserver"; 
             $vm.qid='91000787'; //permission control table
             $VmAPI={}; $VmAPI.api_base="https://rt.woolcock.org.au/pro/";
+            if(window.location.toString().indexOf('db=dev')!=-1) $VmAPI.api_base="https://rt.woolcock.org.au/dev/";
             //------------------------------------
             //setup modules location
             $vm.hosting_path=window.location.href.substring(0, window.location.href.split('?')[0].lastIndexOf('/'));
