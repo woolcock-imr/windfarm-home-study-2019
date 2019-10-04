@@ -1,5 +1,8 @@
 <div id=D__ID>
     <div>
+        <div id=dev__ID style='font-size:15px;color:red; position:absolute;top:0;left:0;display:none'>
+                Warning: test only, don't add real data. Take away &db=dev from the url to access production database.
+        </div>
         <div class=vm-mobile>
             <span id=vm-mobile_title class=vm-mobile-title>Woolcock</span>
             <a id="vm-hamburger_button" class=vm-hamburger-button onclick="$vm.toggle()"><i class="fa fa-bars"></i></a>
@@ -16,6 +19,8 @@
         </div>
     </div>
     <script>
+        //------------------------------------
+        if(window.location.href.indexOf("db=dev")!=-1) $('#dev__ID').show();
         //------------------------------------
         $('#vm-mobile_title').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })
         $('.vm-desk-logo').on('click',function(){ $vm.load_module('home',$vm.root_layout_content_slot,{}) })

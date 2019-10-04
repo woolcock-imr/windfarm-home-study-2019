@@ -20,7 +20,7 @@
         <script boot-up>
         (function () {
             //------------------------------------
-            $vm.ver=[0.71,0.37]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
+            $vm.ver=[0.11,0.10]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
             //$vm.debug=1;
             //------------------------------------
             $vm.online_questionnaire=1;
@@ -42,11 +42,11 @@
             //modules used immediately
             $vm.module_list={
                 //you can add modules here directly
-                "home":	                            {url:"$H/1/home.html",router:1},
-                "frame":	                        {url:"$H/1/frame.html",sys:1},
-                "app":	                            {url:"$H/1/app.html"},
-                "header":	                        {url:"$H/1/header.html"},
-                "footer":	                        {url:"$H/1/footer.html"},
+                "home":	                            {url:"$H/0-oq/home.html",router:1},
+                "frame":	                        {url:"$H/0-oq/frame.html",sys:1},
+                "app":	                            {url:"$H/0-oq/app.html"},
+                "header":	                        {url:"$H/0-oq/header.html"},
+                "footer":	                        {url:"$H/0-oq/footer.html"},
             };
             for(p in $vm.module_list) $vm.module_list[p].url=$vm.module_list[p].url.replace('$H',$vm.hosting_path);
             //------------------------------------

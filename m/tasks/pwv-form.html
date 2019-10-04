@@ -24,6 +24,60 @@
                 <div id=dynamic_part__ID></div>
                 <!---------------------------------------------------->
 
+                <div class='row row__ID'>
+                    <div class="col">
+                        <span><b>Trial 1</b> Patient Report </span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_patientreport1__ID></u>
+                            <br>
+                            <input type="file" name=patientreport1 style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button" id=patientreport1__ID>Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='row row__ID'>
+                    <div class="col">
+                        <span><b>Trial 1</b> Clinical Report </span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_clinicalreport1__ID></u>
+                            <br>
+                            <input type="file" name=clinicalreport1 style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button" id=clinicalreport1__ID>Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                
+                <div id=dynamic_part__ID></div>
+                <div class='row row__ID'>
+                    <div class="col">
+                        <span><b>Trial 2</b> Patient Report </span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_patientreport2__ID></u>
+                            <br>
+                            <input type="file" name=patientreport2 style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button"
+                                id=patientreport2__ID>Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='row row__ID'>
+                    <div class="col">
+                        <span><b>Trial 2</b> Clinical Report </span>
+                        <div class="form-control">
+                            <u style='cursor:pointer' id=link_clinicalreport2__ID></u>
+                            <br>
+                            <input type="file" name=clinicalreport2 style="margin-top:6px" /> &nbsp&nbsp&nbsp <button type="button"
+                                id=clinicalreport2__ID>Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------------------------------------->
+                    
+
+
+
+
+
                 <!-- submit button part for all tsak forms------------>
                 <br>
     			<div class="row">
@@ -39,7 +93,7 @@
         function F__ID(){
             //-------------------------------------
             //build text input fields
-            var fields="Visit,Heart_Rate_Trial1,Pulse_Wave_Velocity_Trial1,Pulse_Transit_Time_Trial1,PWV_Distance_Trial1,patientreport1,clinicalreport1,Heart_Rate_Trial2,Pulse_Wave_Velocity_Trial2,Pulse_Transit_Time_Trial2,PWV_Distance_Trial2,patientreport2,clinicalreport2";
+            var fields="Visit,Heart_Rate_Trial1,Pulse_Wave_Velocity_Trial1,Pulse_Transit_Time_Trial1,PWV_Distance_Trial1,Heart_Rate_Trial2,Pulse_Wave_Velocity_Trial2,Pulse_Transit_Time_Trial2,PWV_Distance_Trial2";
             var fs=fields.split(',');
             var txt="";
             for(var i=0;i<fs.length;i++){
@@ -52,6 +106,16 @@
             VmInclude:__COMPONENT__/f/form.01.js
             VmInclude:'__CURRENT_PATH__/task-form.js'
             //-------------------------------------
+            var load5 = m.load;
+            m.load = function () {
+                load5();
+                m.set_file_link("patientreport1");
+                m.set_file_link("clinicalreport1");
+                m.set_file_link("patientreport2");
+                m.set_file_link("clinicalreport2");
+
+
+            }
         }
     </script>
     <style>

@@ -91,7 +91,7 @@
         			var href=$a.attr('href');
         			if(href!=undefined){
         				check_count($a,N);
-        			}
+					}
         		});
         	})
         	//--------------------------------------------------------
@@ -107,7 +107,16 @@
         			var tb=$vm.module_list[m.prefix+href].Table;
         			if(tb!=undefined){
 						if($vm.api_type=="sqlserver"){
+							
 							var sql="select Num=count(ID) from [TABLE-"+tb+"]";
+							
+							//----------------
+							//special
+							if(href.indexOf("s-")!=-1 || href.indexOf("b-")!=-1 || href.indexOf("m1-")!=-1){
+								sql="select Num=count(A.ID) from [TABLE-"+tb+"] as A join [TABLE-91000790] as B on A.PUID=B.UID ";
+							}
+							//----------------
+							
 							$VmAPI.request({data:{cmd:'read',qid:$vm.qid,sql:sql},callback:function(res){
 								var num=res.records[0].Num;
 								var txt=$('<div/>').html($a.attr('data-a_text')).text();
