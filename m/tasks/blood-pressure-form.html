@@ -52,6 +52,24 @@
             VmInclude:__COMPONENT__/f/form.01.js
             VmInclude:'__CURRENT_PATH__/task-form.js'
             //-------------------------------------
+            var ob=m.before_submit;
+            m.before_submit=function(record,dbv){
+                var s1=parseFloat(record.Systolic1);
+                var s2=parseFloat(record.Systolic2);
+                var s3=parseFloat(record.Systolic3);
+                var p1=parseFloat(record.Pulse1);
+                var p2=parseFloat(record.Pulse2);
+                var p3=parseFloat(record.Pulse3);
+                var d1=parseFloat(record.Diastolic1);
+                var d2=parseFloat(record.Diastolic2);
+                var d3=parseFloat(record.Diastolic3);
+                record.SystolicM=((s1+s2+s3)/3).toFixed(2);
+                record.PulseM=((p1+p2+p3)/3).toFixed(2);
+                record.DiastolicM=((d1+d2+d3)/3).toFixed(2);
+
+                return ob(record,dbv);
+            }
+            //-------------------------------------
         }
     </script>
     <style>

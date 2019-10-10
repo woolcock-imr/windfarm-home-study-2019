@@ -3,8 +3,9 @@
     var modules={
         //-------------------------------------------------------------------------------------
         //randomisation
-        "randomisation-data":		        {url:"$H/m/tasks/randomisation-data.html",Table:"91000792",form_module:"randomisation-form"},
-        "randomisation-form":		        {url:"$H/m/tasks/randomisation-form.html",Table:"91000792"},
+        //"randomisation-data":               {url:"$H/m/randomisation-data.html",Table:"91000116"}, //old pid
+        //-------------------------------------------------------------------------------------
+        "randomisation-data":		        {url:"$H/m/randomisation-data.html",Table:"91000792"},
         //-------------------------------------------------------------------------------------
         //tasks
         "s-phone-screening-hearing-data":	{url:"$H/m/tasks/phone-screening-hearing-data.html",Table:"91000793",form_module:"s-phone-screening-hearing-form"},

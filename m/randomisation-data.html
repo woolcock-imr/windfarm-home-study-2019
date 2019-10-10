@@ -1,0 +1,111 @@
+<div id=D__ID>
+    <div>
+        <!--<input id=Import_f__ID type=file />-->
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js       
+            //-------------------------------------
+            var fields="Box,Type";
+            m.fields=fields+",Submit_date,Submitted_by";
+            //-------------------------------------
+            m.set_req=function(){
+                var sql="with tb as (select Information,ID,UID,PUID,DateTime,Modified=Convert(varchar,Modified,127),Author,RowNum=row_number() over (order by V1 ASC) from [TABLE-"+m.db_pid+"-@S1] )";
+                sql+="select Information,ID,UID,PUID,Submit_date=DateTime,Modified,Submitted_by=Author,RowNum from tb where RowNum between @I6 and @I7";
+                var sql_n="select count(ID) from [TABLE-"+m.db_pid+"-@S1]";
+                m.req={cmd:'read',qid:m.qid,sql:sql,sql_n:sql_n,s1:'"'+$('#keyword__ID').val()+'"',I:$('#I__ID').text(),page_size:$('#page_size__ID').val()}
+            }
+            //-------------------------------------
+            
+            
+            
+            
+            /*            
+            $('#Import_f__ID').on('change',function(e){
+                handleFileSelect(e)
+            })
+            //-------------------------------------
+            var handleFileSelect=function(evt){
+                var form_fields=fields.split(',');
+                var before_submit=undefined;
+                var start=function(){
+                    var files = evt.target.files;
+                    if(files.length==1){
+                        var reader = new FileReader();
+                        reader.onload = (function(e) {
+                            var contents = e.target.result;
+                            var lines=contents.replace(/\r/g,'\n').replace(/\n\n/g,'\n').split('\n');
+                            var NN=lines.length;
+                            if(lines[NN-1].length<2) NN--;
+                            NN--;
+                            NN=NN-12;
+                            if(lines.length>1){
+                                var tab='\t';
+                                var n1=lines[0].split('\t').length;
+                                var n2=lines[0].split(',').length;
+                                if(n2>n1) tab=',';
+                                var flds=lines[0].replace(/ /g,'_').splitCSV(tab); //flds comes from the first line
+                                var fn=$('#Import_f__ID').val().substring($('#Import_f__ID').val().lastIndexOf('\\')+1);
+                                if(confirm("Are you sure to import "+fn+"?\n")){
+                                    var I=0;
+                                    var i=1;
+                                    //var status="ok";
+                                    (function looper(){
+                                        if( i<=lines.length && i<=NN) {
+                                            var items=lines[i].splitCSV(tab);
+                                            if(items.length>=1){
+                                                var rd={};
+                                                var dbv={};
+                                                for(var j=0;j<flds.length;j++){
+                                                    var field_id=flds[j];
+                                                    var index=flds.indexOf(field_id);
+                                                    var index2=form_fields.indexOf(field_id);
+                                                    if(index!=-1 && index2!=-1)  rd[field_id]=items[index];
+                                                    if(field_id=='UID' && j==0) rd['UID']=items[0];
+                                                    if(field_id=='Submit_date' && j==1) rd['Submit_date']=items[1];
+                                                    if(field_id=='Submitted_by' && j==2) rd['Submitted_by']=items[2];
+                                                    //if(field_id=='I1' && j==3) dbv['I1']=items[3];
+                                                }
+                                                console.log(rd)
+                                                dbv.V1=parseInt(rd.Box)-12;
+                                                rd.Box=parseInt(rd.Box)-12;
+                                                if( jQuery.isEmptyObject(rd)===false){
+                                                    if(typeof(before_submit)!='undefined'){
+                                                        before_submit(rd,dbv);
+                                                    }
+                                                    jQuery.ajaxSetup({async:false});
+                                                    var req={cmd:"add",qid:m.qid,db_pid:m.db_pid,data:rd,dbv:dbv,file:{}};
+                                                    $VmAPI.request({data:req,callback:function(res){
+                                                        //$vm.request({cmd:"insert",table:m.Table,data:rd,index:dbv,file:{}},function(res){
+                                                        //status=res.status;
+                                                    }});
+                                                    I++;
+                                                    jQuery.ajaxSetup({async:true});
+                                                }
+                                            }
+                                            i++;
+                                            setTimeout( looper, 100);
+                                        }
+                                        else{
+                                            alert(I.toString()+" records have been imported.");
+                                            m.request_data();
+                                        }
+                                    })();
+                                }
+                            }
+                        });
+                        reader.readAsText(files[0]);
+                    }
+                }
+                start();
+            }
+            //-----------------------------------------------
+            */
+        }
+    </script>
+    <style>
+        VmInclude:__COMPONENT__/g/grid.01.css
+    </style>
+</div>
