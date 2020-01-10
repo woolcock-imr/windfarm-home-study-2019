@@ -112,8 +112,8 @@
         "m1-dass21-form":	{url:"$H/m/tasks/depression-anxiety-stress-scales-form.html",Table:"91000857",task_name:"depression-anxiety-stress-scales"},
         "m1-vas-data":	{url:"$H/m/tasks/visual-analogue-scale-data.html",Table:"91000858",form_module:"m1-vas-form"},
         "m1-vas-form":	{url:"$H/m/tasks/visual-analogue-scale-form.html",Table:"91000858",task_name:"visual-analogue-scale"},
-        //"m1-nas-data":	{url:"$H/m/tasks/noise-annoyance-scale-data.html",Table:"91000818",form_module:"m1-nas-form"},
-        //"m1-nas-form":	{url:"$H/m/tasks/noise-annoyance-scale-form.html",Table:"91000818",task_name:"noise-annoyance-scale"},
+        "m1-nas-data":	{url:"$H/m/tasks/noise-annoyance-scale-data.html",Table:"91000870",form_module:"m1-nas-form"},
+        "m1-nas-form":	{url:"$H/m/tasks/noise-annoyance-scale-form.html",Table:"91000870",task_name:"noise-annoyance-scale"},
         
         "m1-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000859",form_module:"m1-tower-of-london-form",quest_module:"m1-tower-of-london-quest"},
         "m1-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000859"},
