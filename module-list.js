@@ -65,13 +65,13 @@
         "b-nas-data":	{url:"$H/m/tasks/noise-annoyance-scale-data.html",Table:"91000818",form_module:"b-nas-form"},
         "b-nas-form":	{url:"$H/m/tasks/noise-annoyance-scale-form.html",Table:"91000818",task_name:"noise-annoyance-scale"},
         
-        "b-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000819",form_module:"b-tower-of-london-form",quest_module:"b-tower-of-london-quest"},
-        "b-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000819"},
-        "b-tower-of-london-quest":	            {url:"$H/m/tasks/tower-of-london-quest.html",Table:"91000819",task_name:"tower-of-london"},
+//       "b-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000819",form_module:"b-tower-of-london-form",quest_module:"b-tower-of-london-quest"},
+//     "b-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000819"},
+//       "b-tower-of-london-quest":	            {url:"$H/m/tasks/tower-of-london-quest.html",Table:"91000819",task_name:"tower-of-london"},
         
-        "b-nback2-data":	            {url:"$H/m/tasks/nback2-data.html",Table:"91000820",form_module:"b-nback2-form",quest_module:"b-nback2-quest"},
-        "b-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000820"},
-        "b-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000820",task_name:"2-back"},
+//        "b-nback2-data":	            {url:"$H/m/tasks/nback2-data.html",Table:"91000820",form_module:"b-nback2-form",quest_module:"b-nback2-quest"},
+//        "b-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000820"},
+//        "b-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000820",task_name:"2-back"},
         
         "b-height-weight-data":	            {url:"$H/m/tasks/height-weight-data.html",Table:"91000821",form_module:"b-height-weight-form"},
         "b-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000821",task_name:"height-weight"},
@@ -115,13 +115,13 @@
         "m1-nas-data":	{url:"$H/m/tasks/noise-annoyance-scale-data.html",Table:"91000870",form_module:"m1-nas-form"},
         "m1-nas-form":	{url:"$H/m/tasks/noise-annoyance-scale-form.html",Table:"91000870",task_name:"noise-annoyance-scale"},
         
-        "m1-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000859",form_module:"m1-tower-of-london-form",quest_module:"m1-tower-of-london-quest"},
-        "m1-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000859"},
-        "m1-tower-of-london-quest":	            {url:"$H/m/tasks/tower-of-london-quest.html",Table:"91000859",task_name:"tower-of-london"},
+//       "m1-tower-of-london-data":	            {url:"$H/m/tasks/tower-of-london-data.html",Table:"91000859",form_module:"m1-tower-of-london-form",quest_module:"m1-tower-of-london-quest"},
+//       "m1-tower-of-london-form":	            {url:"$H/m/tasks/tower-of-london-form.html",Table:"91000859"},
+//        "m1-tower-of-london-quest":	            {url:"$H/m/tasks/tower-of-london-quest.html",Table:"91000859",task_name:"tower-of-london"},
         
-        "m1-nback2-data":	            {url:"$H/m/tasks/nback2-data.html",Table:"91000860",form_module:"m1-nback2-form",quest_module:"m1-nback2-quest"},
-        "m1-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000860"},
-        "m1-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000860",task_name:"2-back"},
+//      "m1-nback2-data":	            {url:"$H/m/tasks/nback2-data.html",Table:"91000860",form_module:"m1-nback2-form",quest_module:"m1-nback2-quest"},
+//      "m1-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000860"},
+//      "m1-nback2-quest":	            {url:"$H/m/tasks/nback2-quest.html",Table:"91000860",task_name:"2-back"},
         
         "m1-height-weight-data":	            {url:"$H/m/tasks/height-weight-data.html",Table:"91000861",form_module:"m1-height-weight-form"},
         "m1-height-weight-form":	            {url:"$H/m/tasks/height-weight-form.html",Table:"91000861",task_name:"height-weight"},
@@ -164,6 +164,27 @@
         //-------------------------------------------------------------------------------------
         "module-editor":                    {url:"https://vm.vmiis.com/component/m/module-editor.html",router:1,sys:1},
         //-------------------------------------------------------------------------------------
+    //Flash Replacements HTML5
+
+        "n-b-tower-of-london-data":	            {url:"$H/m/neurocog/tower-london-data.html",Table:"91000819",form_module:"n-b-tower-of-london-form",quest_module:"n-b-tower-of-london-quest"},
+        "n-b-tower-of-london-form":	            {url:"$H/m/neurocog/tower-london-form.html",Table:"91000819"},
+        "n-b-tower-of-london-quest":	            {url:"$H/m/neurocog/tower-london-quest.html",Table:"91000819",task_name:"tower-of-london"},
+        
+        "n-b-nback2-data":	            {url:"$H/m/neurocog/nback2-data.html",Table:"91000820",form_module:"n-b-nback2-form",quest_module:"n-b-nback2-quest"},
+        "n-b-nback2-form":	            {url:"$H/m/neurocog/nback2-form.html",Table:"91000820"},
+        "n-b-nback2-quest":	            {url:"$H/m/neurocog/nback2-quest.html",Table:"91000820",task_name:"2-back"},
+
+        "n-m1-tower-of-london-data": { url: "$H/m/neurocog/tower-london-data.html", Table: "91000859", form_module: "n-m1-tower-of-london-form", quest_module: "n-m1-tower-of-london-quest" },
+        "n-m1-tower-of-london-form": { url: "$H/m/neurocog/tower-london-form.html", Table: "91000859" },
+        "n-m1-tower-of-london-quest": { url: "$H/m/neurocog/tower-london-quest.html", Table: "91000859", task_name: "tower-of-london" },
+
+        "n-m1-nback2-data": { url: "$H/m/neurocog/nback2-data.html", Table: "91000860", form_module: "n-m1-nback2-form", quest_module: "n-m1-nback2-quest" },
+        "n-m1-nback2-form": { url: "$H/m/neurocog/nback2-form.html", Table: "91000860" },
+        "n-m1-nback2-quest": { url: "$H/m/neurocog/nback2-quest.html", Table: "91000860", task_name: "2-back" },
+            
+    
+        //-------------------------------------------------------------------------------------
+
     }
     for(p in modules){
         $vm.module_list[p]=modules[p]; 
