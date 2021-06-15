@@ -17,7 +17,13 @@
                         <input type=text name="Participant_uid" class=form-control readonly />
                     </div>
                     <hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
-                </div>
+								<div class="col-sm-12 col-lg-3 input__ID">
+									<span class=label__ID>Visit</span><br>
+									<input type=text name="Visit" class=form-control />
+								</div>
+								<hr style="border-top: 1px solid #888;width: 100%;margin:10px 0">
+								</div>
+
                 <!---------------------------------------------------->
                 <!-- Form Inputs-------------------------------------->
                 <div id=dynamic_part__ID></div>
@@ -37,7 +43,7 @@
         function F__ID(){
             //-------------------------------------
             //build text input fields
-            var fields="NBACK,NGTA,NGRT,NTCR,NTIC,NTMR,NMIS,NNO,NRT,NAC";
+            var fields="NBACK,NGTA,NGRT,GMRT,NTCR,NTIC,NMIS,NMRT,MRTCM,MRTCN,SDCR,SDCM,SDCN,MdRTCR,MdRTCM,MnRTCR,MxRTCR,MF10CR,MS10CR,SDF10CR,SDS10CR,NTCM,NTCN,NTFM,NTFN,NTWR,NNO,NRT,NAC";
             var fs=fields.split(',');
             var txt="";
             for(var i=0;i<fs.length;i++){

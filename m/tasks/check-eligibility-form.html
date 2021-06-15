@@ -109,9 +109,11 @@
                                 //if(res.records[0].travel=='Yes') {output=0;}
                                 //else 
                                 if(res.records[0].pregnant=='Yes') {output=0;}
-                                console.log("Trival:"+res.records[0].travel);
-                                console.log("Pregnant:"+res.records[0].pregnant);
+																if(res.records[0].children == 'Yes') { output = 0; }																																
+                                console.log("Travel:"+res.records[0].travel);
+                                console.log("Pregnant:"+res.records[0].pregnant); 
                             }
+														
                         }})
                     }
                     if(output==1){
@@ -157,6 +159,32 @@
                             }
                         }})
                     }
+										//--------------------------------------------
+										if (output == 1) {
+										var tb = $vm.module_list["s-insomnia-severity-index-data"].Table;
+										var sql = "select Information from [TABLE-" + tb + "] where PUID=" + $('#F__ID input[name=Participant_uid]').val();
+										var req = { cmd: cmd, qid: $vm.qid, db_pid: tb, sql: sql };
+										if (cmd == "read-s2") req = { cmd: 'read-s2', qid: $vm.qid, db_pid: tb };
+										$VmAPI.request({
+											data: req, callback: function (res) {
+												if (res.records.length == 0) {
+													output = 0;
+													console.log("No ISI record");
+												}
+												else if (res.records.length > 1) {
+													alert("There are more than 1 ISI records of this participant. Please check the records.");
+													output = 0;
+													console.log("There are more than 1 ISI records");
+												}
+												else {
+													if (res.records[0].ISI == "NaN") { output = 0; }
+													else if (parseInt(res.records[0].ISI) > 18) { output = 0; }
+													console.log("ISI:" + res.records[0].ISI);
+												}
+											}
+										})
+									}
+
                     jQuery.ajaxSetup({async:true});
                 }
                 return output;

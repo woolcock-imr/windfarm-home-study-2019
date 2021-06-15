@@ -8,9 +8,9 @@
             VmInclude:__COMPONENT__/g/grid.01.js
             VmInclude:__CURRENT_PATH__/task-data.js
             //-------------------------------------
-            var fields="NBACK,NGTA,NGRT,NTCR,NTIC,NTMR,NMIS,NNO,NRT,NAC";
+            var fields="Visit,NBACK,NGTA,NGRT,NTCR,NTIC,NTMR,NMIS,NNO,NRT,NAC";
             m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
-            m.fields_e="Participant_ID,"+fields;
+            m.fields_e="Participant_ID,Visit"+fields;
             //-------------------------------------
             m.new=function(){
                 if(m.form_module!=undefined){

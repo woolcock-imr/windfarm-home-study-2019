@@ -33,6 +33,7 @@
                         </ul>
                     </div>
                 </div>
+								
                 <hr class=hr__ID>
                 <!---------------------------------------------------->
                 <div class='row row__ID'>
@@ -46,7 +47,7 @@
                             <br><label><input type="radio"  name="sleep_suppl" value=4 /> frequently (3 or more times per week)</label>
                         </ul>
                     </div>
-    			</div>
+    						</div>
                 <hr class=hr__ID>
                 <!---------------------------------------------------->
                 <div class='row row__ID'>
@@ -79,6 +80,12 @@
                             <br><span>Zolpidem (e.g. Stilnox)</span>
                             <br><label><input type="checkbox"  name="curr_zolpidem" /> Are you currently taking / taken in the last month</label>
                         </ul>
+													<div class="row row__ID">
+														<div class="col">
+															<span>Other Sleep and Anti-anxiety medications?</span><br>
+															<input type="text" style="width:100%" name="o_sleep_med" />
+														</div>
+													</div>
                         <br>
                         <span>Anti-depressants</span>
                         <ul>
@@ -101,6 +108,12 @@
                             <br><span>Venlafaxine (e.g. Efexor)</span>
                             <br><label><input type="checkbox"  name="curr_venlafaxine" /> Are you currently taking / taken in the last month</label>
                         </ul>
+													<div class="row row__ID">
+														<div class="col">
+															<span>Other Anti-depressants medications?</span><br>
+															<input type="text" style="width:100%" name="o_antidep_med" />
+														</div>
+													</div>
                         <br>
                         <span>Stimulants or Weight Reducing medications</span>
                         <ul>
@@ -113,6 +126,12 @@
                             <br><span>Phentermine (e.g. Duromine, Metermine)</span>
                             <br><label><input type="checkbox"  name="curr_phentermine" /> Are you currently taking / taken in the last month</label>
                         </ul>
+													<div class="row row__ID">
+														<div class="col">
+															<span>Other Stimulants or Weight Reducing medications?</span><br>
+															<input type="text" style="width:100%" name="o_stim_weight_med" />
+														</div>
+													</div>
                         <br>
                         <span>Anti-psychotics</span>
                         <ul>
@@ -127,12 +146,18 @@
                             <br><span>Risperidone (e.g. Risperdal)</span>
                             <br><label><input type="checkbox"  name="curr_risperidone" /> Are you currently taking / taken in the last month</label>
                         </ul>
-                    </div>
-    			</div>
-                <hr class=hr__ID>
+												<div class="row row__ID">
+													<div class="col">
+														<span>Other Anti-psychotics medications?</span><br>
+														<input type="text" style="width:100%" name="o_antipsych_med" />
+													</div>
+												</div>
+									</div>
+							</div>
+    			<hr class=hr__ID>
                 <!---------------------------------------------------->
 
-                <!-- submit button part for all tsak forms------------>
+                <!-- submit button part for all task forms------------>
                 <br>
     			<div class="row">
     				<div class=col>
@@ -172,7 +197,7 @@
             padding:6px 5px;
         }
         #form_container__ID .row__ID:hover{
-            background-color: #ddd;
+            /*background-color: #ddd*/;
         }
         #header__ID{
             background-color:#727b84;
@@ -218,7 +243,7 @@
 			margin: 0;
 		}
 		.radio__ID label:hover{
-			background-color: #999;
+			/*background-color: #999*/;
 		}
         
         

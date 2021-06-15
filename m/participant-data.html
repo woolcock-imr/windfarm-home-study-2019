@@ -7,7 +7,7 @@
             //-------------------------------------
             VmInclude:__COMPONENT__/g/grid.01.js       
             //-------------------------------------
-            var fields="Participant ID|UID,Randomisation_Number,Randomised_by,Subject_ID,Screening_Number,Subject_Initials,Gender,DOB,_Data_Entry,_Setup,_Quest,_Login_ID,_Password";
+            var fields="Database_ID|UID,Subject_ID,Subject_Initials,Gender,DOB,_Data_Entry,_Setup,_Quest,_Summary,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             m.fields_e="Participant_ID|UID,Subject_ID,Screening_Number,Subject_Initials,Gender,DOB"
             //-------------------------------------
@@ -28,7 +28,7 @@
                     case '_Setup':
                         td.html("<u style='cursor:pointer'>Questionnaire Setup</u>");
                         td.find('u').on('click',function(){
-    						$vm.load_module(m.prefix+m.online_questionnaire_setup,'',{record:records[I]});
+    										$vm.load_module(m.prefix+m.online_questionnaire_setup,'',{record:records[I]});
                         });
                         break;
                     case '_Quest':
@@ -44,12 +44,21 @@
                     case '_Login_ID':
                         td.html(records[I].UID+"-"+m.Table);
                         break;
+									
+									case'_Summary':
+										td.html("<u style='cursor:pointer'>Summary Info Sheet</u>");
+										td.find('u').on('click', function () {
+										$vm.load_module(m.prefix+m.s-information-summary-data,'',{record:records[I].UID}); 
+									///HELP WITH SUMMARY DEFINING
+										var db = ""; if (window.location.toString().indexOf('db=dev') != -1) db = "&db=dev";
+										 });
+										 break;
                 }
+							};
             }
             //-------------------------------------
             m.before_submit=function(record,dbv){
                 return true;
-            }
             //-------------------------------------
         }
     </script>

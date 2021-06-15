@@ -26,14 +26,15 @@
         "s-sleep-disorders-and-patterns-form":	{url:"$H/m/tasks/sleep-disorders-and-patterns-form.html",Table:"91000800",task_name:"sleep-disorders-and-patterns"},
         "s-medical-history-data":	        {url:"$H/m/tasks/medical-history-data.html",Table:"91000801",form_module:"s-medical-history-form"},
         "s-medical-history-form":	        {url:"$H/m/tasks/medical-history-form.html",Table:"91000801",task_name:"medical-history"},
-        "s-insomnia-severity-index-data":	{url:"$H/m/tasks/insomnia-severity-index-data.html",Table:"91000802",form_module:"s-insomnia-severity-index-form"},
-        "s-insomnia-severity-index-form":	{url:"$H/m/tasks/insomnia-severity-index-form.html",Table:"91000802",task_name:"insomnia-severity-index"},
+        "s-insomnia-severity-index-data":	{url:"$H/m/tasks/s-insomnia-severity-index-data.html",Table:"91000802",form_module:"s-insomnia-severity-index-form"},
+        "s-insomnia-severity-index-form":	{url:"$H/m/tasks/s-insomnia-severity-index-form.html",Table:"91000802",task_name:"insomnia-severity-index"},
         "s-consent-2-data":	                {url:"$H/m/tasks/consent-2-data.html",Table:"91000803",form_module:"s-consent-2-form"},
         "s-consent-2-form":	                {url:"$H/m/tasks/consent-2-form.html",Table:"91000803",task_name:"consent-2"},
         "s-actigraphy-data":	            {url:"$H/m/tasks/actigraphy-data.html",Table:"91000804",form_module:"s-actigraphy-form"},
         "s-actigraphy-form":	            {url:"$H/m/tasks/actigraphy-form.html",Table:"91000804",task_name:"actigraphy"},
         "s-sleep-diary-data":	            {url:"$H/m/tasks/sleep-diary-data.html",Table:"91000805",form_module:"s-sleep-diary-form"},
         "s-sleep-diary-form":	            {url:"$H/m/tasks/sleep-diary-form.html",Table:"91000805",task_name:"sleep-diary"},
+				"s-information-summary-data": 					{url:"$H/m/tasks/screening-summary.html", Table: "565165616513"},
 
 
         //-------------------------------------------------------------------------------------
@@ -167,19 +168,19 @@
     //Flash Replacements HTML5
 
         "n-b-tower-of-london-data":	            {url:"$H/m/neurocog/tower-london-data.html",Table:"91000819",form_module:"n-b-tower-of-london-form",quest_module:"n-b-tower-of-london-quest"},
-        "n-b-tower-of-london-form":	            {url:"$H/m/neurocog/tower-london-form.html",Table:"91000819"},
+        "n-b-tower-of-london-form":	            {url:"$H/m/tasks/tower-london-form.html",Table:"91000819"},
         "n-b-tower-of-london-quest":	            {url:"$H/m/neurocog/tower-london-quest.html",Table:"91000819",task_name:"tower-of-london"},
         
         "n-b-nback2-data":	            {url:"$H/m/neurocog/nback2-data.html",Table:"91000820",form_module:"n-b-nback2-form",quest_module:"n-b-nback2-quest"},
-        "n-b-nback2-form":	            {url:"$H/m/neurocog/nback2-form.html",Table:"91000820"},
+        "n-b-nback2-form":	            {url:"$H/m/tasks/nback2-form.html",Table:"91000820"},
         "n-b-nback2-quest":	            {url:"$H/m/neurocog/nback2-quest.html",Table:"91000820",task_name:"2-back"},
 
         "n-m1-tower-of-london-data": { url: "$H/m/neurocog/tower-london-data.html", Table: "91000859", form_module: "n-m1-tower-of-london-form", quest_module: "n-m1-tower-of-london-quest" },
-        "n-m1-tower-of-london-form": { url: "$H/m/neurocog/tower-london-form.html", Table: "91000859" },
+        "n-m1-tower-of-london-form": { url: "$H/m/tasks/tower-london-form.html", Table: "91000859" },
         "n-m1-tower-of-london-quest": { url: "$H/m/neurocog/tower-london-quest.html", Table: "91000859", task_name: "tower-of-london" },
 
         "n-m1-nback2-data": { url: "$H/m/neurocog/nback2-data.html", Table: "91000860", form_module: "n-m1-nback2-form", quest_module: "n-m1-nback2-quest" },
-        "n-m1-nback2-form": { url: "$H/m/neurocog/nback2-form.html", Table: "91000860" },
+        "n-m1-nback2-form": { url: "$H/m/tasks/nback2-form.html", Table: "91000860" },
         "n-m1-nback2-quest": { url: "$H/m/neurocog/nback2-quest.html", Table: "91000860", task_name: "2-back" },
             
     

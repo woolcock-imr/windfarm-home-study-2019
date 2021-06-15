@@ -8,7 +8,7 @@
             VmInclude:__COMPONENT__/g/grid.01.js
             VmInclude:__CURRENT_PATH__/task-data.js
             //-------------------------------------
-            var fields="Matted Romberg|Romberg,Unterberger,Tandem Walking|Tandem,examcomments,"
+            var fields="Visit,Matted Romberg|Romberg,Unterberger,Tandem Walking|Tandem,examcomments,"
             fields+="SponVNG Vision Denied|Spon_VNG,SponVNG Description|Nystag_description,Right Gaze (VD)|R_Gaze_VNG,RG Nystag Description|Nystag_description_RG,Left Gaze (VD)|L_Gaze_VNG,LG Nystag Description|Nystag_description_LG,Headshake VNG|Headshake_VNG,HS Nystag Description|Nystag_description_HS,L_DixHallPike,Nystag_description_LDHP,R_Dixhallpike,Nystag_description_RDHP,Supine VNG|Supine,Nystag_description_Supine,L_Head_Roll,Left Head Roll Nystag Description|Nystag_description_LHR,R_Head_Roll,Right Head Roll Nystag Description|Nystag_description_RHR,"
             fields+="R_Otoscopy,L_Otoscopy,Otocomment,R_Static_compliance,L_Static_compliance,R_Middle_ear_presssure,L_Middle_ear_presssure,R_Ear_Canal_Volume,L_Ear_Canal_Pressure,Tympanometry Comments|Tympcomment,"
             fields+="MaskedAC250,R_PTA_AC250Hz,L_PTA_AC250Hz,MaskedAC500,R_PTA_AC500Hz,L_PTA_AC500Hz,MaskedAC1000,R_PTA_AC1000Hz,L_PTA_AC1000Hz,MaskedAC1500,R_PTA_AC1500Hz,L_PTA_AC1500Hz,MaskedAC2000,R_PTA_AC2000Hz,L_PTA_AC2000Hz,MaskedAC3000,R_PTA_AC3000Hz,L_PTA_AC3000Hz,MaskedAC4000,R_PTA_AC4000Hz,L_PTA_AC4000Hz,MaskedAC6000,R_PTA_AC6000Hz,L_PTA_AC6000Hz,MaskedAC8000,R_PTA_AC8000Hz,L_PTA_AC8000Hz,ACPTACOMMENT,"
@@ -20,7 +20,7 @@
             fields+="L_VHIT_RIGHTGAIN,L_VHIT_RIGHTGAIN_SACCADES,L_VHIT_LEFTGAIN,L_VHIT_LEFTGAIN_SACCADES,A_VHIT_RIGHTGAIN,R_VHIT_RIGHTGAIN_SACCADES,A_VHIT_LEFTGAIN,R_VHIT_LEFTGAIN_SACCADES,P_VHIT_RIGHTGAIN,P_VHIT_RIGHTGAIN_SACCADES,P_VHIT_LEFTGAIN,P_VHIT_LEFTGAIN_SACCADES,VHITCOMMENT,OverallComment"
 
             m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
-            m.fields_e="Participant_ID|Participant_uid,"+fields
+            m.fields_e="Participant_ID|Participant_uid"+fields
             //-------------------------------------
         }
     </script>
