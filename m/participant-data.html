@@ -45,21 +45,19 @@
                         td.html(records[I].UID+"-"+m.Table);
                         break;
 									
-									case'_Summary':
-										td.html("<u style='cursor:pointer'>Summary Info Sheet</u>");
-										td.find('u').on('click', function () {
-										$vm.load_module(m.prefix+m.s-information-summary-data,'',{record:records[I].UID}); 
-									///HELP WITH SUMMARY DEFINING
-										var db = ""; if (window.location.toString().indexOf('db=dev') != -1) db = "&db=dev";
-										 });
-										 break;
+                    case'_Summary':
+                        td.html("<u style='cursor:pointer'>Summary Info Sheet</u>");
+                        td.find('u').on('click', function () {
+                            $vm.load_module(m.prefix+'s-information-summary-data','',{record:records[I]}); 
+                        });
+                        break;
                 }
-							};
             }
             //-------------------------------------
             m.before_submit=function(record,dbv){
                 return true;
-            //-------------------------------------
+                //-------------------------------------
+            }
         }
     </script>
     <style>

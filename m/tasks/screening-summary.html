@@ -9,41 +9,43 @@
                     <center><b>SCREENING INFORMATION SHEET</b></center>
                 </td>
             </tr>
-            <table id=tb__ID>
+        </table>
+        <table id=tb__ID>
             <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
-            <tr>
-            <td>Subject ID:</td><td colspan="2" id=F20009058__ID></td><tr>
+                <td>Subject ID:</td><td colspan="2" id=F20009058__ID></td>
             </tr>
             <tr>
-            <td><b>Database ID:</b></td><td colspan="2" id=F91000790__ID></td>
+                <td><b>Database ID:</b></td><td colspan="2" id=F91000790__ID></td>
             </tr>
-             <table id=tb__IDD>
-              <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
+        </table>
+        <table id=tb__IDD>
+            <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
                 <td><b><center>Questionnaries<br></td>
                 <td><b><center>Inclusion/Exclusion<br></td>
-                <td><b><center>Participant results<br></td></center></table>
+                <td><b><center>Participant results<br></td></center>
             </tr>
-						<table id=tb__ID>
+        </table>
+		<table id=tb__ID>
               <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
-                <td><b>Weinstein Noise Sensitivity</b></td><td><center>Exclusion&lt;58</td><td id=F20009063__ID></td>
+                <td><b>Weinstein Noise Sensitivity</b></td><td><center>Exclusion&lt;58</td><td id=F91000797__ID></td>
             </tr>
             <tr>
                 <td><b>Insomnia Severity Index</b></td><td><center>Exclusion&gt;18</td><td id=F20009064__ID></td>
             </tr>
             <tr>
-                <td><b>Pregnant</b></td><td><center>Exclusion if YES</td>/td><td id=F20009083__ID></td>
+                <td><b>Pregnant</b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
             </tr>
 						 <tr>
-                <td><b>Child &lt;5 Years </b></td><td><center>Exclusion if YES</td>/td><td id=F20009083__ID></td>
+                <td><b>Child &lt;5 Years </b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
             </tr>
 						<tr>
-                <td><b>Shift worker</b></td><td><center>Exclusion if YES</td>/td><td id=F20009083__ID></td>
+                <td><b>Shift worker</b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
             </tr>
-							</table>
-						<table id=tb__ID>
+		</table>
+		<table id=tb__ID>
 							<col style='width:337px'/>
 							<tr>
 								<td style='text-align:center' ><b>FLAGS<br></td>
@@ -68,15 +70,44 @@
 									<td>Other Medical History</td><td colspan="2" id=medical_history__ID></td>
 							</tr>
 						
-    			</table>
+    	</table>
 	
 		</form>
 </div>
 <script>
 function F__ID(){
     //-------------------------------------
+    var m=$vm.module_list['__MODULE__'];
     //-------------------------------------
     $('#D__ID').on('load',function(){
+        var participant=m.input.record;
+        var participant_uid=participant.UID
+        
+        var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
+        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+                var record=res.records[0];
+                $('#F91000797__ID').text(record.wnss);
+            }
+            //else alert("No data");
+        }})
+        /*
+        var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
+        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+                var record=res.records[0];
+                $('#F91000797__ID').text(record.wnss);
+            }
+            //else alert("No data");
+        }})
+        */
+        
+        
+        
+        
+        
+        
+        /*
         var participant_uid=$vm.vm['__ID'].op.participant_uid;
         var participant=$vm.vm['__ID'].op.participant;
         var sql="select Information from [TABLE-20009063] where PUID="+participant_uid;
@@ -117,6 +148,7 @@ function F__ID(){
         $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
             if(res.records.length!=0)  $('#F20009087__ID').html("<b>Neuroticism:</b> "+res.records[0].eysneck_n+'<br><b>Psychoticism:</b> '+res.records[0].eysneck_p+'<br><b>Extraversion:</b>  '+res.records[0].eysneck_e+' <br><b> Lie :</b> '+res.records[0].eysneck_l);
         }})
+        */
         /*
         var sql="select Information from [TABLE-20009058] where PUID="+participant_uid;
         $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
@@ -124,9 +156,10 @@ function F__ID(){
 
         }})
         */
+        /*
         $('#F91000790__ID').text(UID);
-				$('#F91000790__ID').text(Subject_ID);
-
+		$('#F91000790__ID').text(Subject_ID);
+        */
 
     })
     //-------------------------------------
