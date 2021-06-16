@@ -1,5 +1,5 @@
 
-		VmInclude:__COMPONENT__/g/grid.01.html
+	
 <div>
     <form id=F__ID>
         <table id=tb__header>
@@ -13,10 +13,10 @@
         <table id=tb__ID>
             <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
-                <td>Subject ID:</td><td colspan="2" id=F20009058__ID></td>
+                <td>Subject ID:</td><td colspan="2" id=subjid__ID></td>
             </tr>
             <tr>
-                <td><b>Database ID:</b></td><td colspan="2" id=F91000790__ID></td>
+                <td><b>Database ID:</b></td><td colspan="2" id=dbid__ID></td>
             </tr>
         </table>
         <table id=tb__IDD>
@@ -30,44 +30,47 @@
 		<table id=tb__ID>
               <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
-                <td><b>Weinstein Noise Sensitivity</b></td><td><center>Exclusion&lt;58</td><td id=F91000797__ID></td>
+                <td><b>Weinstein Noise Sensitivity</b></td><td><center>Exclusion&lt;58</td><td id=wnss__ID></td>
             </tr>
             <tr>
-                <td><b>Insomnia Severity Index</b></td><td><center>Exclusion&gt;18</td><td id=F20009064__ID></td>
+                <td><b>Insomnia Severity Index</b></td><td><center>Exclusion&gt;18</td><td id=isi__ID></td>
             </tr>
             <tr>
-                <td><b>Pregnant</b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
+                <td><b>Pregnant</b></td><td><center>Exclusion if YES</td><td id=pregnant__ID></td>
             </tr>
 						 <tr>
-                <td><b>Child &lt;5 Years </b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
+                <td><b>Child &lt;5 Years </b></td><td><center>Exclusion if YES</td><td id=child__ID></td>
             </tr>
 						<tr>
-                <td><b>Shift worker</b></td><td><center>Exclusion if YES</td><td id=F20009083__ID></td>
+                <td><b>Shift worker</b></td><td><center>Exclusion if YES</td><td id=shiftworker__ID></td>
             </tr>
 		</table>
+		<table id=tb__header>
+						<td style='text-align:center;width:600px'><b>FLAGS<br></td>
+		</table>
 		<table id=tb__ID>
-							<col style='width:337px'/>
+						<col style='width:337px' /><col style='width:260px' /><col /></colgroup>
 							<tr>
-								<td style='text-align:center' ><b>FLAGS<br></td>
+								<td>Travel</td><td colspan="2" id=travel__ID></td>
 							</tr>
 							<tr>
-								<td>Travel</td><td colspan="2" id=F20009058__ID></td>
-							<tr>
-								<td>Medication</td><td colspan="2" id=F20009058__ID></td>
+								<td>Medication</td><td colspan="2" id=medication__ID></td>
 							</tr>
 							<tr>
-								<td>Other Medications</td><td colspan="2" id=medical_history__ID></td>
+								<td>Other Medications</td><td colspan="2" id=othermed__ID></td>
+							</tr>
+							<tr>
+								<td>Prescribed Sleep meds or others </td><td colspan="2" id=slp_medication__ID></td>
+							</tr>
+							<tr>
+								<td>Sleep Disorder</td><td colspan="2" id=sleepdisorders__ID></td>
 							</tr>
 							
 							<tr>
-								<td>Sleep Disorder</td><td colspan="2" id=medical_history__ID></td>
-							</tr>
-							
-							<tr>
-									<td>Medical History</td><td colspan="2" id=medical_history__ID></td>
+									<td>Medical History</td><td colspan="2" id=medhx__ID></td>
 							</tr>
 							<tr>
-									<td>Other Medical History</td><td colspan="2" id=medical_history__ID></td>
+									<td>Other Medical History</td><td colspan="2" id=othermedhx__ID></td>
 							</tr>
 						
     	</table>
@@ -82,84 +85,113 @@ function F__ID(){
     $('#D__ID').on('load',function(){
         var participant=m.input.record;
         var participant_uid=participant.UID
-        
-        var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+	  		var sub_ID =participant.Subject_ID
+
+		 $('#dbid__ID').text(participant_uid);
+			$('#subjid__ID').text(sub_ID);
+
+
+		var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
             if(res.records.length!=0){
-                var record=res.records[0];
-                $('#F91000797__ID').text(record.wnss);
-            }
-            //else alert("No data");
-        }})
-        /*
-        var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+							var record=res.records[0];
+							$('#wnss__ID').text(record.wnss);
+					}
+			}})
+
+		    
+		var sql="select Information from [TABLE-91000802] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
             if(res.records.length!=0){
-                var record=res.records[0];
-                $('#F91000797__ID').text(record.wnss);
-            }
-            //else alert("No data");
-        }})
-        */
-        
-        
-        
-        
-        
-        
-        /*
-        var participant_uid=$vm.vm['__ID'].op.participant_uid;
-        var participant=$vm.vm['__ID'].op.participant;
-        var sql="select Information from [TABLE-20009063] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009063__ID').text(res.records[0].wnss);
-        }})
+							var record=res.records[0];
+							$('#isi__ID').text(record.ISI);
+					}
+			}})
+		
+		var sql="select Information from [TABLE-91000795] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+							var record=res.records[0];
+							$('#pregnant__ID').text(record.pregnant);
+							$('#child__ID').text(record.children);
+							$('#travel__ID').text(record.travel); 
+					}
+			}})
+			
+		var sql="select Information from [TABLE-91000796] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+							var record=res.records[0];
+							$('#shiftworker__ID').text(record.current_work);
+					}
+			}})
+				var sql="select Information from [TABLE-91000800] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+							var record=res.records[0];
+							$('#sleepdisorders__ID').text("OSA:"+(record.diagnosis_OSA)+"\r\nInsomnia:"+(record.diagnosis_insom)+"\n Narcolepsy:"+(record.diagnosis_narco)+"\n RLS or PLMS:"+(record.diagnosis_RLS)+"\n Bruxism:"+(record.diagnosis_brux)+"\n RBD:"+(record.diagnosis_REM)+"\n Parasomnias:"+(record.diagnosis_paras)+"\n OHS:"+(record.diagnosis_hypo)+"\n DSPD:"+ (record.diagnosis_DSPD));
+					}
+			}})
 
-        var sql="select Information from [TABLE-20009064] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009064__ID').text(res.records[0].ISI);
-        }})
 
-        var sql="select Information from [TABLE-20009083] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009083__ID').text(res.records[0].kessler);
+var sql="select Information from [TABLE-91000799] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+							var record=res.records[0];	
+						$('#slp_medication__ID').text("Medication to sleep:"+ (record.sleep_med)+"\n"	+"Other Sleep meds:"+ (record.sleep_suppl));
+						$('#othermed__ID').text("Other Sleep Medication: "+(record.o_sleep_med) + "Other Antidepressants:"+(record.o_antidep_med)+"Other Stimulants and Weight Reducing Medications:"+(record.o_stim_weight_med)+"Other Antipsychotics:"+(record.o_antipsych_med));
 
-        }})
+					/*m.cell_render = function (records, I, field, td) {
+						switch(field){
+						case 'curr_clonazepam':
+							case 'curr_diazepam':
+							case 'curr_flunitrazepam':
+							case 'curr_lorazepam':
+							case 'curr_melatonin':
+							case 'curr_nitrazepam':
+							case 'curr_oxazepam':
+							case 'curr_temazepam':
+							case 'curr_zopiclone':
+							case 'curr_zolpidem':
+							case 'curr_agomelatine':
+							case 'curr_citalopram':
+							case 'curr_escitalopram':
+							case 'curr_fluoxetine':
+							case 'curr_lithium':
+							case 'curr_mirtazapine':
+							case 'curr_paroxetine':
+							case 'curr_sertraline':
+							case 'curr_venlafaxine':
+							case 'curr_dexamphetamine':
+							case 'curr_methylpenidate':
+							case 'curr_modafinil':
+							case 'curr_phentermine':
+							case 'curr_chlorpromazine':
+							case 'curr_haloperidol':
+							case 'curr_olanzapine':
+							case 'curr_quetiapine':
+							case 'curr_risperidone':
+						switch(record[I].field){
+							case "on" : $('#medication__ID').text(record[I].field);
+							break;
+							//case "off": break;
+						}
+					}
+				}*/
+			}
+		}})
 
-        var sql="select Information from [TABLE-20009084] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009084__ID').html("<b> Depression:</b>&nbsp "+res.records[0].DASS_DS+'<br><b>Anxiety:</b>&nbsp   '  +res.records[0].DASS_AS+'<br><b>Stress:</b> &nbsp'+res.records[0].DASS_SS);
+var sql="select Information from [TABLE-91000801] where PUID="+participant_uid;
+			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+            if(res.records.length!=0){
+							var record=res.records[0];
+							$('#medhx__ID').text("Anxiety:"+(record.anxiety)+"Bipolar:"+(record.bipolar)+"Depression:"+(record.depression)+"PTSD:"+(record.posttrauma));	
+							$('#othermedhx__ID').text(record.other_psychiatric_specify);
+					}
+			}})
 
-        }})
 
-        var sql="select Information from [TABLE-20009085] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009085__ID').text(res.records[0].crss);
 
-        }})
-
-        var sql="select Information from [TABLE-20009086] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009086__ID').text(res.records[0].cdr);
-
-        }})
-
-        var sql="select Information from [TABLE-20009087] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009087__ID').html("<b>Neuroticism:</b> "+res.records[0].eysneck_n+'<br><b>Psychoticism:</b> '+res.records[0].eysneck_p+'<br><b>Extraversion:</b>  '+res.records[0].eysneck_e+' <br><b> Lie :</b> '+res.records[0].eysneck_l);
-        }})
-        */
-        /*
-        var sql="select Information from [TABLE-20009058] where PUID="+participant_uid;
-        $VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
-            if(res.records.length!=0)  $('#F20009058__ID').text(+res.records[0].registration_id);
-
-        }})
-        */
-        /*
-        $('#F91000790__ID').text(UID);
-		$('#F91000790__ID').text(Subject_ID);
-        */
 
     })
     //-------------------------------------
