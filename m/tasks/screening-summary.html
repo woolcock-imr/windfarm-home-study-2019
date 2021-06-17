@@ -129,7 +129,10 @@ function F__ID(){
 			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
             if(res.records.length!=0){
 							var record=res.records[0];
-							$('#sleepdisorders__ID').text("OSA:"+(record.diagnosis_OSA)+"\r\nInsomnia:"+(record.diagnosis_insom)+"\n Narcolepsy:"+(record.diagnosis_narco)+"\n RLS or PLMS:"+(record.diagnosis_RLS)+"\n Bruxism:"+(record.diagnosis_brux)+"\n RBD:"+(record.diagnosis_REM)+"\n Parasomnias:"+(record.diagnosis_paras)+"\n OHS:"+(record.diagnosis_hypo)+"\n DSPD:"+ (record.diagnosis_DSPD));
+							var ut_text="OSA:"+(record.diagnosis_OSA)+"\n Insomnia:"+(record.diagnosis_insom)+"\n Narcolepsy:"+(record.diagnosis_narco)+"\n RLS or PLMS:"+(record.diagnosis_RLS)+"\n Bruxism:"+(record.diagnosis_brux)+"\n RBD:"+(record.diagnosis_REM)+"\n Parasomnias:"+(record.diagnosis_paras)+"\n OHS:"+(record.diagnosis_hypo)+"\n DSPD:"+ (record.diagnosis_DSPD);
+							var t_text=$vm.text(ut_text);
+							t_text=t_text.replace(/\n/g,'<br>');
+							$('#sleepdisorders__ID').html(t_text);
 					}
 			}})
 
@@ -140,6 +143,12 @@ var sql="select Information from [TABLE-91000799] where PUID="+participant_uid;
 							var record=res.records[0];	
 						$('#slp_medication__ID').text("Medication to sleep:"+ (record.sleep_med)+"\n"	+"Other Sleep meds:"+ (record.sleep_suppl));
 						$('#othermed__ID').text("Other Sleep Medication: "+(record.o_sleep_med) + "Other Antidepressants:"+(record.o_antidep_med)+"Other Stimulants and Weight Reducing Medications:"+(record.o_stim_weight_med)+"Other Antipsychotics:"+(record.o_antipsych_med));
+						
+						var text="";
+						if(record.curr_clonazepam=='on') text+="popcurr clonazepam<br>"
+						if(record.curr_diazepam=='on') text+="popcurr diazepam<br>"
+						
+						$('#medication__ID').html(text);
 
 					/*m.cell_render = function (records, I, field, td) {
 						switch(field){
