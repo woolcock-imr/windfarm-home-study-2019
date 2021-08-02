@@ -1,7 +1,7 @@
-
 	
 <div>
     <form id=F__ID>
+		<button id=reload__ID type=button >Refresh</button>
         <table id=tb__header>
             <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
@@ -15,6 +15,10 @@
             <tr>
                 <td>Subject ID:</td><td colspan="2" id=subjid__ID></td>
             </tr>
+						<!-- <tr>
+							<td>Subject ID:</td>
+							<td colspan="2" id=subjid__ID></td>
+						</tr> -->
             <tr>
                 <td><b>Database ID:</b></td><td colspan="2" id=dbid__ID></td>
             </tr>
@@ -78,18 +82,22 @@
 		</form>
 </div>
 <script>
+	/*
+	function reload(){
+		document.getElementById("refresh").addEventListener("click", F__ID);
+		alert("yoooo")
+	}
+	*/
 function F__ID(){
     //-------------------------------------
     var m=$vm.module_list['__MODULE__'];
-    //-------------------------------------
-    $('#D__ID').on('load',function(){
+    //------------------------------------- 
+	var query_data=function(){
         var participant=m.input.record;
         var participant_uid=participant.UID
-	  		var sub_ID =participant.Subject_ID
-
-		 $('#dbid__ID').text(participant_uid);
-			$('#subjid__ID').text(sub_ID);
-
+	  	var sub_ID =participant.Subject_ID
+		$('#dbid__ID').text(participant_uid);
+		$('#subjid__ID').text(sub_ID);
 
 		var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
 			$VmAPI.request({data:{cmd:'read',qid:$vm.qid,sql:sql},callback:function(res){
@@ -229,6 +237,19 @@ var sql="select Information from [TABLE-91000799] where PUID="+participant_uid;
 							 $('#medication__ID').html(text);
 			}
 		}})
+		var sql="select Information from [TABLE-91000800] where PUID="+participant_uid;
+		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		if(res.records.length!=0){
+						var record=res.records[0];
+					var osa 
+					var insom
+					var narco
+					var rls
+					var brux
+					var rbd
+					var paras
+					var ohs
+					var dspd
 
 var sql="select Information from [TABLE-91000801] where PUID="+participant_uid;
 			//$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
@@ -259,6 +280,14 @@ var sql="select Information from [TABLE-91000801] where PUID="+participant_uid;
 			}})
 
     })
+	//-------------------------------------
+	$('#reload__ID').on('click',function(){
+		query_data();
+	})
+
+	$('D__ID').on('load', function () {
+			query_data();
+		})
     //-------------------------------------
 }
 </script>

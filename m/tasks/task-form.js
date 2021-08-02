@@ -31,6 +31,12 @@ m.load=function(){
     //m.input=$vm.vm['__ID'].input; if(m.input==undefined) m.input={};
     $('#F__ID')[0].reset();
     $('#submit__ID').show();
+
+    if($vm.online_questionnaire==1){
+        $('#row_participant__ID').hide();
+    }
+
+
     var task_record=m.input.record;
     $vm.deserialize_s(task_record,'#F__ID');
     //--------------------------
