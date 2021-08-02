@@ -1,6 +1,6 @@
 //-------------------------------------
-var participant_pid=$vm.module_list['participant-data'].Table;
-var notes_pid=$vm.module_list['edc-notes-data'].Table;
+var participant_pid=$vm.module_list[m.prefix+'participant-data'].Table;
+var notes_pid=$vm.module_list[m.prefix+'edc-notes-data'].Table;
 var participant_info=function(record){ if(record.Subject_Initials!=undefined) return record.UID+" "+record.Subject_Initials; else return record.UID; }
 //-------------------------------------
 m.set_req=function(){
@@ -24,7 +24,8 @@ m.set_req=function(){
 }
 //-------------------------------------
 m.set_req_export=function(i1,i2){
-    //m.fields_e=m.form_fields;
+    m.fields_e=m.form_fields;
+		$vm.module_list[options.name].id=$vm.module_list[options.name].UID;
     var sql="with participant as (select ParticipantUID=UID from [FORM-"+participant_pid+"] )";
     sql+=",task as (select ID,UID,PUID,S3,Information,DateTime,Author from [FORM-"+m.Table+"-@S1])";
     sql+=",records as (select ID,ParticipantUID,Information,DateTime,Author,RowNum=row_number() over (order by ID DESC) from participant left join task on PUID=ParticipantUID)";
@@ -45,7 +46,7 @@ m.cell_render=function(records,I,field,td,set_value,source){
             var value=records[I][field];  if(value==="") value='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
             td.html("<u style='cursor:pointer;color:"+color+"'>"+value+"</u>");
             td.find('u').on('click',function(){
-                $vm.load_module_v2('edc-notes-data',$vm.root_layout_content_slot,{
+                $vm.load_module(m.prefix+'edc-notes-data',$vm.root_layout_content_slot,{
                     task_module_name:$vm.vm['__ID'].name,
                     record:records[I]
                 });
@@ -68,9 +69,9 @@ m.before_submit=function(record,dbv){
 m.new=function(){
     if(m.form_module!=undefined){
         var participant_record=$vm.vm['__ID'].input.record; //from the child panel
-        $vm.load_module_v2(m.form_module,'',{participant_record:participant_record,goback:1});
+        $vm.load_module(m.prefix+m.form_module,'',{participant_record:participant_record,goback:1});
     }
 }
 //-------------------------------------
-//m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+m.fields="_Form,Status|S3,Notes|NT,Participant_ID|Participant_uid,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
 //-------------------------------------

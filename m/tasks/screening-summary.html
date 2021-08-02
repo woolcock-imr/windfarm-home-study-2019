@@ -1,7 +1,7 @@
-
 	
 <div>
     <form id=F__ID>
+<button id=reload>Refresh</button>
         <table id=tb__header>
             <col style='width:337px' /><col style='width:260px' /><col /></colgroup>
             <tr>
@@ -15,6 +15,10 @@
             <tr>
                 <td>Subject ID:</td><td colspan="2" id=subjid__ID></td>
             </tr>
+						<!-- <tr>
+							<td>Subject ID:</td>
+							<td colspan="2" id=subjid__ID></td>
+						</tr> -->
             <tr>
                 <td><b>Database ID:</b></td><td colspan="2" id=dbid__ID></td>
             </tr>
@@ -78,14 +82,20 @@
 		</form>
 </div>
 <script>
+	function reload(){
+	document.getElementById("refresh").addEventListener("click", F__ID);
+alert("yoooo")
+	}
 function F__ID(){
     //-------------------------------------
     var m=$vm.module_list['__MODULE__'];
     //-------------------------------------
-    $('#D__ID').on('load',function(){
+   
+		$('#D__ID').on('load',function(){
         var participant=m.input.record;
         var participant_uid=participant.UID
 	  		var sub_ID =participant.Subject_ID
+		
 
 		 $('#dbid__ID').text(participant_uid);
 			$('#subjid__ID').text(sub_ID);
@@ -95,8 +105,8 @@ function F__ID(){
 			$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
             if(res.records.length!=0){
 							var record=res.records[0];
-							$('#wnss__ID').text(record.wnss);
-					}
+						$('#wnss__ID').text(record.wnss);
+				}
 			}})
 
 		    
@@ -106,6 +116,7 @@ function F__ID(){
 							var record=res.records[0];
 							$('#isi__ID').text(record.ISI);
 					}
+					
 			}})
 		
 		var sql="select Information from [TABLE-91000795] where PUID="+participant_uid;
@@ -253,11 +264,11 @@ var sql="select Information from [TABLE-91000801] where PUID="+participant_uid;
 					}
 			}})
 
-
-
-
     })
-    //-------------------------------------
+
+		  //-------------------------------------
+
+		//-------------------------------------
 }
 </script>
 <style>

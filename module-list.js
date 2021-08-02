@@ -129,8 +129,8 @@
         
         "m1-blood-pressure-data":	            {url:"$H/m/tasks/blood-pressure-data.html",Table:"91000862",form_module:"m1-blood-pressure-form"},
         "m1-blood-pressure-form":	            {url:"$H/m/tasks/blood-pressure-form.html",Table:"91000862",task_name:"blood-pressure"},
-        "m1-pwv-data":	            {url:"$H/m/tasks/pwv-data.html",Table:"91000863",form_module:"m1-pwv-form"},
-        "m1-pwv-form":	            {url:"$H/m/tasks/pwv-form.html",Table:"91000863",task_name:"pwv"},
+        "m1-pwv-data":	            					{url:"$H/m/tasks/pwv-data.html",Table:"91000863",form_module:"m1-pwv-form"},
+        "m1-pwv-form":	            					{url:"$H/m/tasks/pwv-form.html",Table:"91000863",task_name:"pwv"},
         "m1-psg-data":	            {url:"$H/m/tasks/psg-300-data.html",Table:"91000864",form_module:"m1-psg-form"},
         "m1-psg-form":	            {url:"$H/m/tasks/psg-300-form.html",Table:"91000864",task_name:"psg"},
         "m1-blood-and-urine-data":	            {url:"$H/m/tasks/blood-and-urine-data.html",Table:"91000865",form_module:"m1-blood-and-urine-form"},
