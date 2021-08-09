@@ -100,14 +100,14 @@ function F__ID(){
 		$('#subjid__ID').text(sub_ID);
 
 		var sql="select Information from [TABLE-91000797] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];
 					$('#wnss__ID').text(record.wnss);
 			}
 		}})
 		var sql="select Information from [TABLE-91000802] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];
 						$('#isi__ID').text(record.ISI);
@@ -116,7 +116,7 @@ function F__ID(){
 		}})
 		
 		var sql="select Information from [TABLE-91000795] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];
 						$('#pregnant__ID').text(record.pregnant);
@@ -126,14 +126,14 @@ function F__ID(){
 		}})
 			
 		var sql="select Information from [TABLE-91000796] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];
 						$('#shiftworker__ID').text(record.current_work);
 				}
 		}})
 		var sql="select Information from [TABLE-91000800] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];
 					var osa 
@@ -176,7 +176,7 @@ function F__ID(){
 
 
 		var sql="select Information from [TABLE-91000799] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 		if(res.records.length!=0){
 						var record=res.records[0];	
 						var sleep_med = "Medication to sleep:" + (record.sleep_med);
@@ -234,7 +234,7 @@ function F__ID(){
 	}})
 
 		var sql="select Information from [TABLE-91000801] where PUID="+participant_uid;
-		$VmAPI.request({data:{cmd:'query_records',sql:sql},callback:function(res){
+		$VmAPI.request({data:{cmd:'read',sql:sql},callback:function(res){
 			if(res.records.length!=0){
 						var record=res.records[0];
 						$('#othermedhx__ID').text(record.other_psychiatric_specify);
