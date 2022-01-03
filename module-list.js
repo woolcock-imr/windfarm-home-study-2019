@@ -6,6 +6,7 @@
         //"randomisation-data":               {url:"$H/m/randomisation-data.html",Table:"91000116"}, //old pid
         //-------------------------------------------------------------------------------------
         "randomisation-data":		        {url:"$H/m/randomisation-data.html",Table:"91000792"},
+        "randomisation2-data":		        {url:"$H/m/randomisation2-data.html",Table:"91000915"},
         //-------------------------------------------------------------------------------------
         //tasks
         "s-phone-screening-hearing-data":	{url:"$H/m/tasks/phone-screening-hearing-data.html",Table:"91000793",form_module:"s-phone-screening-hearing-form"},
